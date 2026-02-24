@@ -1,0 +1,109 @@
+{
+  "timestamp": "2026-02-24T16:50:54.455Z",
+  "testSuite": "API & Network Analysis",
+  "requests": [],
+  "failedRequests": [
+    {
+      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1583779457094-ab6f77f7bf57%3Fw%3D800%26q%3D80&w=640&q=75",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1598977591216-1875c7dae545%3Fw%3D800%26q%3D80&w=640&q=75",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1561436260-e1b6d56ec5a6%3Fw%3D800%26q%3D80&w=640&q=75",
+      "status": 404,
+      "statusText": "Not Found"
+    },
+    {
+      "url": "http://localhost:9020/api/admin/auth",
+      "status": 405,
+      "statusText": "Method Not Allowed"
+    }
+  ],
+  "consoleErrors": [
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 405 (Method Not Allowed)"
+    }
+  ],
+  "apiTests": [
+    {
+      "endpoint": "/api/restaurants",
+      "status": 200,
+      "ok": true,
+      "dataCount": 20,
+      "sampleItem": "id, name, category, categoryEmoji, rating, reviewCount, address, lat, lng, description, priceRange, openHours, tags, michelin, imageUrl, district, distanceMeters, distanceText, walkingMinutes"
+    },
+    {
+      "endpoint": "/api/attractions",
+      "status": 200,
+      "ok": true,
+      "dataCount": 20,
+      "sampleItem": "id, name, category, categoryEmoji, rating, reviewCount, address, lat, lng, description, openHours, entryFee, duration, tags, tips, googleMapsUrl, imageUrl, district, michelin, distanceMeters, distanceText, walkingMinutes"
+    },
+    {
+      "endpoint": "/api/admin/auth",
+      "status": 405,
+      "ok": false,
+      "preview": ""
+    }
+  ],
+  "issues": [],
+  "googleMapsLinks": [
+    {
+      "href": "https://www.google.com/maps/search/?api=1&query=41.3838,2.1815",
+      "text": "지도에서 보기 →"
+    },
+    {
+      "href": "https://www.google.com/maps/search/Bar%20del%20Pla%20Barcelona",
+      "text": "🗺️Google 예약"
+    },
+    {
+      "href": "https://www.google.com/maps/search/?api=1&query=41.3838,2.1815",
+      "text": "레스토랑으로 길찾기"
+    }
+  ],
+  "requestStats": {
+    "total": 96,
+    "byType": {
+      "document": 7,
+      "image": 19,
+      "stylesheet": 14,
+      "script": 36,
+      "font": 14,
+      "fetch": 6
+    },
+    "externalDomains": [
+      "images.unsplash.com",
+      "fonts.googleapis.com",
+      "fonts.gstatic.com"
+    ]
+  },
+  "summary": {
+    "totalRequests": 96,
+    "failedRequests": 4,
+    "consoleErrors": 5,
+    "apiEndpoints": 3,
+    "allApisOk": false
+  }
+}

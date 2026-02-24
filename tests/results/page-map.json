@@ -1,0 +1,101 @@
+{
+  "timestamp": "2026-02-24T16:47:33.538Z",
+  "baseUrl": "http://localhost:9020",
+  "framework": "Next.js 15 (App Router)",
+  "routes": [
+    {
+      "path": "/",
+      "name": "홈 (먹고/갈래 탭)",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "🇪🇸 🥘 Carrer de Pallars 기준 ¡Buen provecho! 바르셀로나 맛집 가이드  호텔에서 걸어갈 수 있는 최고의 맛집을 찾아보세요  🔍 타파스, 파에야, 핀초스... 🍽️ 먹고? 🗺️ 갈래? 🥘 타파스 🍚 파에야 🍢 핀초스 🍩 츄러스 🏨 호텔 근처 맛집 더보기 🥩 La Pepita 2.0km 4.5 · El Born"
+    },
+    {
+      "path": "/restaurants",
+      "name": "맛집 목록",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "🇪🇸 바르셀로나 맛집 🇪🇸 전체 🥘 타파스 🍚 파에야 🍢 핀초스 🍩 츄러스 🥩 하몬 🦑 해산물 정렬: 평점순 거리순 리뷰순  총 20개 맛집  🥘 $$$$ ⭐ 미슐랭 58분 Tickets 4.8 (4,210) 3.8km  알베르트 아드리아의 아방가르드 타파스 바. 예약 필수, 독창적인 분자 요리.  Avinguda del Paral·le"
+    },
+    {
+      "path": "/restaurants/1",
+      "name": "맛집 상세 (Bar del Pla)",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "🥘 Ciutat Vella Bar del Pla 4.5 (2,840) · $$ · 31분 (호텔에서 2.1km)  고딕지구의 클래식 카탈루냐 타파스 바. 현지인들에게 사랑받는 숨은 명소.  Carrer de la Montcada, 2, Ciutat Vella, Barcelona  지도에서 보기 →  12:00 - 23:00  #타파스 #카탈루냐 #와인 #"
+    },
+    {
+      "path": "/attractions",
+      "name": "명소 목록",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "🇪🇸 바르셀로나 관광 🗺️ 전체 🏛️ 랜드마크 🖼️ 박물관 🏖️ 해변 🌳 공원 🛍️ 쇼핑 🎡 액티비티 🌃 야경 정렬: 평점순 거리순 🆓 무료만  총 20개 관광지  ⛪ €26 30분 Sagrada Família 4.9 (285,000) · 90분 2.0km  가우디의 미완성 걸작. 130년째 건설 중인 세계적 성당으로 내부의 스테인드글라"
+    },
+    {
+      "path": "/attractions/a1",
+      "name": "명소 상세 (Sagrada Família)",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "€26 ⛪ Eixample Sagrada Família 4.9 (285,000) · 약 90분 · 30분 (호텔에서 2.0km)  가우디의 미완성 걸작. 130년째 건설 중인 세계적 성당으로 내부의 스테인드글라스는 압도적인 아름다움을 선사합니다. 2026년 완공을 향해 달려가는 살아있는 건축 역사입니다.  Carrer de Mallorca, 401, Eix"
+    },
+    {
+      "path": "/nearby",
+      "name": "주변 탭",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "주변 맛집  위치 확인 중...  500m 1km 2km 3km  위치 확인 중...  호텔 홈 주변 맛집 명소 🆘 SOS"
+    },
+    {
+      "path": "/bookmarks",
+      "name": "북마크",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "즐겨찾기  0개의 맛집을 저장했어요  저장된 맛집이 없어요  마음에 드는 맛집을 즐겨찾기에 추가해보세요  호텔 홈 주변 맛집 명소 🆘 SOS"
+    },
+    {
+      "path": "/emergency",
+      "name": "긴급연락처",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "🆘 홈으로 EMERGENCY GUIDE 긴급 연락처  바르셀로나 긴급 연락처 및 안전 가이드  전화번호를 탭하면 즉시 전화연결됩니다  🚨 긴급 (즉시 연결) 🆘  긴급전화 (경찰/소방/구급)  긴급  유럽 통합 긴급번호. 모든 긴급상황에 발신 가능  112 🚑  구급대  긴급  의료 응급상황  061 🚒  소방  긴급  화재 신고  080 👮 경"
+    },
+    {
+      "path": "/admin",
+      "name": "관리자 페이지",
+      "status": 200,
+      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
+      "preview": "관리자 로그인  Spaingogo 관리 대시보드  로그인  관리자 전용 페이지입니다  🆘 SOS"
+    }
+  ],
+  "components": [
+    "HomeTabs (먹고/갈래)",
+    "SituationChips-맛집",
+    "SOS Emergency Button",
+    "BottomNav (nav element)",
+    "Chip: 피곤할 때",
+    "Chip: 로맨틱한 밤",
+    "Chip: 빠르게 먹자",
+    "Buttons: 🍽️ 먹고? | 🗺️ 갈래? | 😴피곤할 때 | 💑로맨틱한 밤 | 🥂친구들과 | 🤢해장이 필요해 | 🎉특별한 날 | 💰가성비로 | 🌅아침 일찍 | 🌙야식 생각 | 🍷와인 한 잔 | ⚡빠르게 먹자 | 🦞해산물 먹고파 | 🍩달달한 거 | 호텔"
+  ],
+  "apiEndpoints": [
+    {
+      "endpoint": "/api/restaurants",
+      "status": 200,
+      "ok": true,
+      "preview": "{\"restaurants\":[{\"id\":\"4\",\"name\":\"Tickets\",\"category\":\"tapas\",\"categoryEmoji\":\"🥘\",\"rating\":4.8,\"rev"
+    },
+    {
+      "endpoint": "/api/attractions",
+      "status": 200,
+      "ok": true,
+      "preview": "{\"attractions\":[{\"id\":\"a1\",\"name\":\"Sagrada Família\",\"category\":\"landmark\",\"categoryEmoji\":\"⛪\",\"ratin"
+    }
+  ],
+  "dataStats": {
+    "restaurants": 20,
+    "attractions": 20,
+    "emergencyContacts": 6,
+    "situationChips_restaurant": 12,
+    "situationChips_attraction": 12
+  }
+}

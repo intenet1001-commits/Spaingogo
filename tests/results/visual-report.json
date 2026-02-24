@@ -1,0 +1,135 @@
+{
+  "timestamp": "2026-02-24T16:55:43.474Z",
+  "testSuite": "Visual & Accessibility",
+  "viewports": [
+    {
+      "viewport": "mobile",
+      "size": "390x844",
+      "screenshots": [
+        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-home.png",
+        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-restaurants.png",
+        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-attractions.png",
+        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-emergency.png",
+        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-nearby.png"
+      ],
+      "layoutIssues": [
+        {
+          "page": "/",
+          "issues": []
+        },
+        {
+          "page": "/restaurants",
+          "issues": [
+            "터치 타겟 작은 버튼: 3개 (<32px)"
+          ]
+        },
+        {
+          "page": "/attractions",
+          "issues": [
+            "터치 타겟 작은 버튼: 11개 (<32px)"
+          ]
+        },
+        {
+          "page": "/emergency",
+          "issues": []
+        },
+        {
+          "page": "/nearby",
+          "issues": [
+            "터치 타겟 작은 버튼: 4개 (<32px)"
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "tablet",
+      "size": "768x1024",
+      "screenshots": [],
+      "layoutIssues": [
+        {
+          "page": "/",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screens"
+          ]
+        },
+        {
+          "page": "/restaurants",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        },
+        {
+          "page": "/attractions",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        },
+        {
+          "page": "/emergency",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        },
+        {
+          "page": "/nearby",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        }
+      ]
+    },
+    {
+      "viewport": "desktop",
+      "size": "1280x800",
+      "screenshots": [],
+      "layoutIssues": [
+        {
+          "page": "/",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screens"
+          ]
+        },
+        {
+          "page": "/restaurants",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        },
+        {
+          "page": "/attractions",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        },
+        {
+          "page": "/emergency",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        },
+        {
+          "page": "/nearby",
+          "issues": [
+            "에러: page.screenshot: Timeout 30000ms exceeded."
+          ]
+        }
+      ]
+    }
+  ],
+  "accessibilityIssues": [
+    {
+      "type": "info",
+      "desc": "헤딩 요소 수: h1=1, h2=3, h3=10"
+    },
+    {
+      "type": "info",
+      "desc": "html lang: ko"
+    }
+  ],
+  "issues": [],
+  "summary": {
+    "totalScreenshots": 5,
+    "totalLayoutIssues": 13,
+    "a11yIssueCount": 0
+  }
+}

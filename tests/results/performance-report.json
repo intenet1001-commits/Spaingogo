@@ -1,0 +1,70 @@
+{
+  "timestamp": "2026-02-24T16:50:55.053Z",
+  "testSuite": "Performance Audit",
+  "pages": [
+    {
+      "path": "/",
+      "name": "홈",
+      "TTFB": 491,
+      "TTFB_grade": "Good",
+      "FCP": 760,
+      "LCP": null,
+      "CLS": 0,
+      "resources": [],
+      "domContentLoaded": 459,
+      "loadTime": 894,
+      "resourceCount": 14,
+      "totalResourceSize": 2718437,
+      "slowResources": [],
+      "FCP_grade": "Good",
+      "CLS_grade": "Good"
+    },
+    {
+      "path": "/restaurants",
+      "name": "맛집 목록",
+      "TTFB": 460,
+      "TTFB_grade": "Good",
+      "FCP": 448,
+      "LCP": null,
+      "CLS": 0,
+      "resources": [],
+      "domContentLoaded": 431,
+      "loadTime": 803,
+      "resourceCount": 14,
+      "totalResourceSize": 2391996,
+      "slowResources": [],
+      "FCP_grade": "Good",
+      "CLS_grade": "Good"
+    },
+    {
+      "path": "/attractions",
+      "name": "명소 목록",
+      "TTFB": 383,
+      "TTFB_grade": "Good",
+      "FCP": 408,
+      "LCP": null,
+      "CLS": 0,
+      "resources": [],
+      "domContentLoaded": 354,
+      "loadTime": 758,
+      "resourceCount": 14,
+      "totalResourceSize": 2342794,
+      "slowResources": [],
+      "FCP_grade": "Good",
+      "CLS_grade": "Good"
+    }
+  ],
+  "summary": {
+    "FCP": "760ms",
+    "FCP_grade": "Good",
+    "LCP": "N/A",
+    "LCP_grade": "N/A",
+    "CLS": 0,
+    "CLS_grade": "Good",
+    "TTFB": "491ms",
+    "TTFB_grade": "Good",
+    "resourceCount": 14,
+    "totalResourceSizeKB": 2655,
+    "overallGrade": "A"
+  }
+}

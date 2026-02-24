@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', Georgia, serif;
+  --font-inter: 'Inter', system-ui, sans-serif;
+
+  --color-spain-red: #C60B1E;
+  --color-spain-yellow: #FFC400;
+  --color-cream: #F5F0E8;
+  --color-olive: #6B7C3E;
+  --color-terra: #C4623A;
+  --color-text: #1A1209;
+  --color-text-muted: #6B5E4E;
+  --color-bg: #FAFAF8;
+  --color-border: #E8DDD0;
+}
+
+.dark {
+  --color-text: #F5F0E8;
+  --color-text-muted: #B8A898;
+  --color-bg: #1A1410;
+  --color-border: #3A2E24;
+  --color-cream: #2A2018;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-inter);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100dvh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-playfair);
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-[#C60B1E] hover:bg-[#A00818] text-white font-medium px-6 py-3 rounded-full transition-all duration-200 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply bg-[#FFC400] hover:bg-[#D4A000] text-[#1A1209] font-medium px-6 py-3 rounded-full transition-all duration-200 active:scale-95;
+  }
+
+  .card-warm {
+    @apply bg-white dark:bg-[#2A2018] rounded-2xl shadow-card border border-[#E8DDD0] dark:border-[#3A2E24] overflow-hidden transition-all duration-300 hover:shadow-warm-lg hover:scale-[1.02];
+  }
+
+  .badge-distance {
+    @apply inline-flex items-center gap-1 bg-[#FFC400]/20 text-[#8A6A00] dark:text-[#FFC400] text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+
+  .badge-category {
+    @apply inline-flex items-center gap-1 bg-[#C60B1E]/10 text-[#C60B1E] text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+
+  .badge-michelin {
+    @apply inline-flex items-center gap-1 bg-red-50 dark:bg-red-950 text-red-600 dark:text-red-400 text-xs font-semibold px-2.5 py-1 rounded-full border border-red-200 dark:border-red-800;
+  }
+}
+
+/* 하단 네비게이션 안전 영역 */
+.bottom-nav-safe {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 2px;
+}
