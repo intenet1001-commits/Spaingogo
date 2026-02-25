@@ -1,0 +1,26 @@
+{
+  "name": "Spaingogo 🇪🇸 | 바르셀로나 가이드",
+  "short_name": "Spaingogo",
+  "description": "바르셀로나 맛집 & 관광명소 가이드",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAFAF8",
+  "theme_color": "#C60B1E",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "food", "lifestyle"]
+}
