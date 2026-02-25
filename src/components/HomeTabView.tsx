@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Star, MapPin, ChevronRight, Timer, Hotel } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { HOTEL_COORDINATES } from "@/domain/value-objects/HotelCoordinate";
+import { useUserLocation } from "@/hooks/useUserLocation";
 import SituationRecommender from "./SituationRecommender";
 import SituationRecommenderPlaces from "./SituationRecommenderPlaces";
 
@@ -53,6 +54,7 @@ export default function HomeTabView({
   nearbyAttractions,
 }: Props) {
   const [tab, setTab] = useState<"eat" | "go">("eat");
+  useUserLocation(); // GPS 권한 즉시 요청 — SituationRecommender 캐시 재사용
 
   return (
     <>

@@ -28,7 +28,8 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const category = searchParams.get("category");
   const search = searchParams.get("q");
-  const sort = searchParams.get("sort") || "rating";
+  const situation = searchParams.get("situation");
+  const sort = searchParams.get("sort") || (situation === "quick" ? "distance" : "rating");
   const michelin = searchParams.get("michelin");
 
   let results: Restaurant[] = (restaurantsData as Restaurant[]).map((r) => {
@@ -61,6 +62,74 @@ export async function GET(req: NextRequest) {
   // 미슐랭 필터
   if (michelin === "true") {
     results = results.filter((r) => r.michelin);
+  }
+
+  // 상황 필터
+  if (situation) {
+    switch (situation) {
+      case "tired":
+        results = results.filter((r) =>
+          (r.distanceMeters ?? 0) < 2500 &&
+          (r.category === "tapas" || r.category === "seafood" ||
+           r.tags.some((t) => ["현지인추천", "카탈루냐", "역사"].includes(t)))
+        );
+        break;
+      case "romantic":
+        results = results.filter((r) =>
+          r.tags.some((t) => ["로맨틱", "해변뷰", "고급", "지중해", "분위기"].includes(t)) ||
+          r.priceRange === "$$$" || r.priceRange === "$$$$"
+        );
+        break;
+      case "friends":
+        results = results.filter((r) =>
+          ["tapas", "pintxos", "paella"].includes(r.category) ||
+          r.tags.some((t) => ["타파스", "핀초스", "공유", "다양"].includes(t))
+        );
+        break;
+      case "hangover":
+        results = results.filter((r) =>
+          r.category !== "churros" &&
+          (r.distanceMeters ?? 0) < 3500 &&
+          (r.category === "seafood" || r.category === "paella" ||
+           r.tags.some((t) => ["해산물", "아침", "든든"].includes(t)) ||
+           r.openHours.includes("09:") || r.openHours.includes("08:"))
+        );
+        break;
+      case "special":
+        results = results.filter((r) => r.michelin || r.priceRange === "$$$" || r.priceRange === "$$$$");
+        break;
+      case "budget":
+        results = results.filter((r) => r.priceRange === "$" || r.priceRange === "$$");
+        break;
+      case "morning":
+        results = results.filter((r) =>
+          r.openHours.includes("09:") || r.openHours.includes("08:") ||
+          r.tags.some((t) => ["아침"].includes(t))
+        );
+        break;
+      case "nightsnack":
+        results = results.filter((r) =>
+          r.openHours.includes("23:") || r.openHours.includes("01:") || r.openHours.includes("00:")
+        );
+        break;
+      case "wine":
+        results = results.filter((r) =>
+          r.tags.some((t) => ["와인", "카바", "베르무트", "자연파와인"].includes(t))
+        );
+        break;
+      case "seafood":
+        results = results.filter((r) =>
+          r.category === "seafood" ||
+          r.tags.some((t) => ["해산물", "파에야", "지중해"].includes(t))
+        );
+        break;
+      case "dessert":
+        results = results.filter((r) =>
+          r.category === "churros" ||
+          r.tags.some((t) => ["디저트", "츄러스", "초콜릿", "도넛", "아티즌", "브런치", "카페"].includes(t))
+        );
+        break;
+    }
   }
 
   // 정렬

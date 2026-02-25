@@ -2,9 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Star, Hotel, ChevronRight } from "lucide-react";
+import { Star, Hotel, MapPin, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { distanceFromHotel, formatDistance } from "@/domain/services/DistanceCalculatorService";
+import { distanceFromHotel, formatDistance, haversineDistance } from "@/domain/services/DistanceCalculatorService";
+import { useUserLocation } from "@/hooks/useUserLocation";
 import restaurantsData from "@/infrastructure/data/restaurants.json";
 
 // 상황 정의
@@ -149,6 +150,7 @@ function filterBySituation(id: SituationId) {
 
 export default function SituationRecommender() {
   const [selected, setSelected] = useState<SituationId | null>(null);
+  const userCoords = useUserLocation();
 
   const situation = SITUATIONS.find((s) => s.id === selected);
   const picks = selected ? filterBySituation(selected) : [];
@@ -203,43 +205,54 @@ export default function SituationRecommender() {
 
           {/* 맛집 리스트 */}
           <div className="space-y-2">
-            {picks.map((r, i) => (
-              <Link key={r.id} href={`/restaurants/${r.id}`}>
-                <div className="flex gap-3 p-3 rounded-xl bg-white dark:bg-[#2A2018] border border-[#E8DDD0] dark:border-[#3A2E24] hover:border-[#C60B1E]/30 transition-all active:scale-[0.99] shadow-sm">
-                  {/* 순위 */}
-                  <div className={cn(
-                    "w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5",
-                    i === 0 ? "bg-[#FFC400] text-[#1A1209]" :
-                    i === 1 ? "bg-[#C0C0C0] text-white" :
-                    i === 2 ? "bg-[#CD7F32] text-white" :
-                    "bg-[#F5F0E8] dark:bg-[#3A2E24] text-[#8A7A6A]"
-                  )}>
-                    {i + 1}
-                  </div>
+            {picks.map((r, i) => {
+              const userDistText = userCoords
+                ? formatDistance(haversineDistance(userCoords, { lat: r.lat, lng: r.lng }))
+                : null;
+              return (
+                <Link key={r.id} href={`/restaurants/${r.id}`}>
+                  <div className="flex gap-3 p-3 rounded-xl bg-white dark:bg-[#2A2018] border border-[#E8DDD0] dark:border-[#3A2E24] hover:border-[#C60B1E]/30 transition-all active:scale-[0.99] shadow-sm">
+                    {/* 순위 */}
+                    <div className={cn(
+                      "w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5",
+                      i === 0 ? "bg-[#FFC400] text-[#1A1209]" :
+                      i === 1 ? "bg-[#C0C0C0] text-white" :
+                      i === 2 ? "bg-[#CD7F32] text-white" :
+                      "bg-[#F5F0E8] dark:bg-[#3A2E24] text-[#8A7A6A]"
+                    )}>
+                      {i + 1}
+                    </div>
 
-                  <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                      <span className="text-sm">{r.categoryEmoji}</span>
-                      <h3 className="font-semibold text-sm truncate text-[#1A1209] dark:text-[#F5F0E8]">
-                        {r.name}
-                      </h3>
-                      {r.michelin && <span className="text-xs flex-shrink-0">⭐</span>}
-                    </div>
-                    <div className="flex items-center gap-2 text-xs text-[#6B5E4E] dark:text-[#B8A898]">
-                      <span className="flex items-center gap-0.5">
-                        <Star size={10} className="fill-[#FFC400] text-[#FFC400]" />
-                        {r.rating.toFixed(1)}
-                      </span>
-                      <span className="flex items-center gap-0.5 text-[#C60B1E] font-medium">
-                        <Hotel size={10} />
-                        {r.distanceText}
-                      </span>
-                      <span className="text-[#8A7A6A]">{r.priceRange}</span>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5 mb-0.5">
+                        <span className="text-sm">{r.categoryEmoji}</span>
+                        <h3 className="font-semibold text-sm truncate text-[#1A1209] dark:text-[#F5F0E8]">
+                          {r.name}
+                        </h3>
+                        {r.michelin && <span className="text-xs flex-shrink-0">⭐</span>}
+                      </div>
+                      <div className="flex items-center flex-wrap gap-x-2 gap-y-0.5 text-xs text-[#6B5E4E] dark:text-[#B8A898]">
+                        <span className="flex items-center gap-0.5">
+                          <Star size={10} className="fill-[#FFC400] text-[#FFC400]" />
+                          {r.rating.toFixed(1)}
+                        </span>
+                        <span className="flex items-center gap-0.5 text-[#C60B1E] font-medium">
+                          <Hotel size={10} />
+                          {r.distanceText}
+                        </span>
+                        {userDistText && (
+                          <span className="flex items-center gap-0.5 text-[#6B7C3E] font-medium">
+                            <MapPin size={10} />
+                            {userDistText}
+                          </span>
+                        )}
+                        <span className="text-[#8A7A6A]">{r.priceRange}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       )}

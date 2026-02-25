@@ -163,7 +163,7 @@
     "tags": ["미술관", "피카소", "예술", "중세건물", "역사", "실내"],
     "tips": "목요일 저녁 18:00 이후 무료 입장. 줄이 길 수 있으니 온라인 예약 권장. 엘 보른 지구 산책과 함께.",
     "googleMapsUrl": "https://maps.google.com/?q=Picasso+Museum+Barcelona",
-    "imageUrl": "https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800&q=80",
     "district": "Ciutat Vella",
     "michelin": false
   },
@@ -205,7 +205,7 @@
     "tags": ["공원", "산책", "보트", "분수", "피크닉", "아이와함께"],
     "tips": "보트 대여는 €6/30분. 호텔에서 도보로 가까워 아침 산책 코스로 최적. 주말에는 현지인들로 활기찹니다.",
     "googleMapsUrl": "https://maps.google.com/?q=Parc+de+la+Ciutadella+Barcelona",
-    "imageUrl": "https://images.unsplash.com/photo-1562883675-8a8b4e0e57c9?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80",
     "district": "Sant Marti",
     "michelin": false
   },
@@ -226,7 +226,7 @@
     "tags": ["역사", "건축", "산책", "사진명소", "가로수길", "호텔근처"],
     "tips": "호텔에서 도보 10분 거리. 시우타델라 공원과 함께 산책 코스로 완벽합니다. 일몰 시 황금빛 조명이 아름답습니다.",
     "googleMapsUrl": "https://maps.google.com/?q=Arc+de+Triomf+Barcelona",
-    "imageUrl": "https://images.unsplash.com/photo-1558618047-f7cc3b9bfb0e?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
     "district": "Sant Marti",
     "michelin": false
   },
@@ -289,7 +289,7 @@
     "tags": ["역사", "전망", "요새", "지중해뷰", "케이블카", "몬주익", "일몰"],
     "tips": "케이블카(Telefèric de Montjuïc)로 올라가면 편합니다. 마법분수, MNAC와 함께 몬주익 반나절 코스 추천.",
     "googleMapsUrl": "https://maps.google.com/?q=Montjuic+Castle+Barcelona",
-    "imageUrl": "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1564399580075-5dfe19c205f3?w=800&q=80",
     "district": "Montjuïc",
     "michelin": false
   },
@@ -331,7 +331,7 @@
     "tags": ["미술관", "미로", "초현실주의", "예술", "실내", "현대미술"],
     "tips": "몬주익 케이블카나 150번 버스로 이동. 몬주익 성 및 MNAC와 함께 반나절 미술 투어 추천.",
     "googleMapsUrl": "https://maps.google.com/?q=Fundacio+Joan+Miro+Barcelona",
-    "imageUrl": "https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
     "district": "Montjuïc",
     "michelin": false
   },
@@ -352,7 +352,7 @@
     "tags": ["역사", "유적", "실내", "무료", "건축", "엘보른", "쇼핑"],
     "tips": "피카소 미술관, 바르셀로네타 해변과 함께 엘보른 지구 반나절 코스로 최적. 1714년 전쟁의 역사가 흥미롭습니다.",
     "googleMapsUrl": "https://maps.google.com/?q=El+Born+Cultural+Centre+Barcelona",
-    "imageUrl": "https://images.unsplash.com/photo-1558618047-f7cc3b9bfb0e?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=800&q=80",
     "district": "Ciutat Vella",
     "michelin": false
   },
@@ -415,7 +415,7 @@
     "tags": ["축구", "FC바르셀로나", "박물관", "투어", "메시", "스포츠"],
     "tips": "경기 당일은 투어 불가. 온라인 예약 권장. 지하철 팔라우 레이알 역 하차. 박물관 단독 방문도 가능.",
     "googleMapsUrl": "https://maps.google.com/?q=Camp+Nou+Barcelona",
-    "imageUrl": "https://images.unsplash.com/photo-1551854838-212c9e1b3c38?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=800&q=80",
     "district": "Les Corts",
     "michelin": false
   }

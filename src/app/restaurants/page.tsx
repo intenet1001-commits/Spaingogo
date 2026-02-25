@@ -2,28 +2,45 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { Search, SlidersHorizontal, X } from "lucide-react";
 import RestaurantCard from "@/components/RestaurantCard";
 import CategoryFilter, { CATEGORIES, CategoryId } from "@/components/CategoryFilter";
 import BottomNav from "@/components/BottomNav";
 import HotelNavigationButton from "@/components/HotelNavigationButton";
 import type { Restaurant } from "@/app/api/restaurants/route";
 
+const SITUATION_LABELS: Record<string, { emoji: string; label: string }> = {
+  tired:     { emoji: "😴", label: "피곤할 때" },
+  romantic:  { emoji: "💑", label: "로맨틱한 밤" },
+  friends:   { emoji: "🥂", label: "친구들과" },
+  hangover:  { emoji: "🤢", label: "해장이 필요해" },
+  special:   { emoji: "🎉", label: "특별한 날" },
+  budget:    { emoji: "💰", label: "가성비로" },
+  morning:   { emoji: "🌅", label: "아침 일찍" },
+  nightsnack:{ emoji: "🌙", label: "야식 생각" },
+  wine:      { emoji: "🍷", label: "와인 한 잔" },
+  quick:     { emoji: "📍", label: "가까운데서" },
+  seafood:   { emoji: "🦞", label: "해산물 먹고파" },
+  dessert:   { emoji: "🍩", label: "달달한 거" },
+};
+
 function RestaurantListContent() {
   const searchParams = useSearchParams();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(true);
+  const situation = searchParams.get("situation") || "";
   const [category, setCategory] = useState<CategoryId>(
     (searchParams.get("category") as CategoryId) || "all"
   );
   const [search, setSearch] = useState(searchParams.get("q") || "");
-  const [sort, setSort] = useState(searchParams.get("sort") || "rating");
+  const [sort, setSort] = useState(searchParams.get("sort") || (situation === "quick" ? "distance" : "rating"));
 
   useEffect(() => {
     const params = new URLSearchParams();
     if (category !== "all") params.set("category", category);
     if (search) params.set("q", search);
     if (sort) params.set("sort", sort);
+    if (situation) params.set("situation", situation);
 
     setLoading(true);
     fetch(`/api/restaurants?${params}`)
@@ -80,6 +97,19 @@ function RestaurantListContent() {
           ))}
         </div>
       </header>
+
+      {/* 상황 필터 배너 */}
+      {situation && SITUATION_LABELS[situation] && (
+        <div className="mx-4 mt-3 flex items-center justify-between px-3 py-2 rounded-xl bg-[#C60B1E]/10 border border-[#C60B1E]/20">
+          <div className="flex items-center gap-2 text-sm font-medium text-[#C60B1E]">
+            <span>{SITUATION_LABELS[situation].emoji}</span>
+            <span>{SITUATION_LABELS[situation].label} 맛집만 보는 중</span>
+          </div>
+          <a href="/restaurants" className="text-[#C60B1E] hover:opacity-70">
+            <X size={16} />
+          </a>
+        </div>
+      )}
 
       {/* 결과 */}
       <div className="px-4 pt-4">

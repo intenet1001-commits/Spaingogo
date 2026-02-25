@@ -2,7 +2,7 @@
 
 import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
-import { Search, SlidersHorizontal } from "lucide-react";
+import { Search, SlidersHorizontal, X } from "lucide-react";
 import AttractionCard from "@/components/AttractionCard";
 import BottomNav from "@/components/BottomNav";
 import HotelNavigationButton from "@/components/HotelNavigationButton";
@@ -21,15 +21,31 @@ const CATEGORIES = [
 
 type CategoryId = (typeof CATEGORIES)[number]["id"];
 
+const SITUATION_LABELS: Record<string, { emoji: string; label: string }> = {
+  photo:    { emoji: "📸", label: "사진 찍기 좋은" },
+  walk:     { emoji: "🚶", label: "걷기 좋은" },
+  kids:     { emoji: "👨‍👩‍👧", label: "아이와 함께" },
+  free:     { emoji: "🆓", label: "무료 입장" },
+  night:    { emoji: "🌃", label: "야경 보러" },
+  history:  { emoji: "📚", label: "역사 탐방" },
+  beach:    { emoji: "🏖️", label: "해변 즐기기" },
+  indoor:   { emoji: "🌧️", label: "비 올 때(실내)" },
+  shopping: { emoji: "🛍️", label: "쇼핑하기" },
+  near:     { emoji: "⚡", label: "호텔 근처" },
+  halfday:  { emoji: "🕐", label: "반나절 코스" },
+  art:      { emoji: "🎨", label: "예술 감상" },
+};
+
 function AttractionsListContent() {
   const searchParams = useSearchParams();
   const [attractions, setAttractions] = useState<Attraction[]>([]);
   const [loading, setLoading] = useState(true);
+  const situation = searchParams.get("situation") || "";
   const [category, setCategory] = useState<CategoryId>(
     (searchParams.get("category") as CategoryId) || "all"
   );
   const [search, setSearch] = useState(searchParams.get("q") || "");
-  const [sort, setSort] = useState(searchParams.get("sort") || "rating");
+  const [sort, setSort] = useState(searchParams.get("sort") || (situation === "near" ? "distance" : "rating"));
   const [freeOnly, setFreeOnly] = useState(false);
 
   useEffect(() => {
@@ -38,6 +54,7 @@ function AttractionsListContent() {
     if (search) params.set("q", search);
     if (sort) params.set("sort", sort);
     if (freeOnly) params.set("free", "true");
+    if (situation) params.set("situation", situation);
 
     setLoading(true);
     fetch(`/api/attractions?${params}`)
@@ -120,6 +137,19 @@ function AttractionsListContent() {
           </div>
         </div>
       </header>
+
+      {/* 상황 필터 배너 */}
+      {situation && SITUATION_LABELS[situation] && (
+        <div className="mx-4 mt-3 flex items-center justify-between px-3 py-2 rounded-xl bg-[#C60B1E]/10 border border-[#C60B1E]/20">
+          <div className="flex items-center gap-2 text-sm font-medium text-[#C60B1E]">
+            <span>{SITUATION_LABELS[situation].emoji}</span>
+            <span>{SITUATION_LABELS[situation].label} 명소만 보는 중</span>
+          </div>
+          <a href="/attractions" className="text-[#C60B1E] hover:opacity-70">
+            <X size={16} />
+          </a>
+        </div>
+      )}
 
       {/* 결과 */}
       <div className="px-4 pt-4">

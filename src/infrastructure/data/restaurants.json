@@ -104,7 +104,7 @@
     "openHours": "09:00 - 13:30, 17:00 - 21:00",
     "tags": ["츄러스", "초콜릿", "역사", "아침"],
     "michelin": false,
-    "imageUrl": "https://images.unsplash.com/photo-1515467837915-15c4777cd6e0?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
     "district": "El Raval"
   },
   {
@@ -302,7 +302,7 @@
     "openHours": "09:00 - 21:00",
     "tags": ["츄러스", "도넛", "아티즌", "디저트"],
     "michelin": false,
-    "imageUrl": "https://images.unsplash.com/photo-1515467837915-15c4777cd6e0?w=800&q=80",
+    "imageUrl": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
     "district": "El Raval"
   },
   {
