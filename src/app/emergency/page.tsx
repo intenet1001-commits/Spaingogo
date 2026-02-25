@@ -124,6 +124,9 @@ function ContactRow({ contact }: { contact: EmergencyContact }) {
 }
 
 export default function EmergencyPage() {
+  const companyContacts = EMERGENCY_CONTACTS.filter(
+    (c) => c.category === "company"
+  );
   const emergencyContacts = EMERGENCY_CONTACTS.filter((c) =>
     ["emergency", "medical"].includes(c.category)
   );
@@ -171,6 +174,18 @@ export default function EmergencyPage() {
       </header>
 
       <div className="px-4 pt-6 space-y-6">
+        {/* 회사 연락처 섹션 */}
+        <section>
+          <h2 className="text-xs font-bold text-[#5A6E9E] uppercase tracking-wider mb-3">
+            🏢 회사 연락처
+          </h2>
+          <div className="space-y-2">
+            {companyContacts.map((contact) => (
+              <ContactRow key={contact.id} contact={contact} />
+            ))}
+          </div>
+        </section>
+
         {/* 긴급 섹션 */}
         <section>
           <h2 className="text-xs font-bold text-[#C60B1E] uppercase tracking-wider mb-3">

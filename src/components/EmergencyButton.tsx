@@ -57,8 +57,17 @@ export default function EmergencyButton() {
 
           {/* Contact list */}
           <div className="px-4 pb-8 space-y-2 max-h-[70vh] overflow-y-auto">
-            {/* Emergency section */}
-            <p className="text-xs font-bold text-[#C60B1E] uppercase tracking-wider mb-2">
+            {/* Company section */}
+            <p className="text-xs font-bold text-[#5A6E9E] uppercase tracking-wider mb-2">
+              🏢 회사
+            </p>
+            {EMERGENCY_CONTACTS.filter((c) => c.category === "company").map(
+              (contact) => (
+                <ContactCard key={contact.id} contact={contact} />
+              )
+            )}
+
+            <p className="text-xs font-bold text-[#C60B1E] uppercase tracking-wider mt-4 mb-2">
               🚨 긴급
             </p>
             {EMERGENCY_CONTACTS.filter((c) =>
@@ -84,15 +93,6 @@ export default function EmergencyButton() {
             ).map((contact) => (
               <ContactCard key={contact.id} contact={contact} />
             ))}
-
-            <p className="text-xs font-bold text-[#5A6E9E] uppercase tracking-wider mt-4 mb-2">
-              🏢 회사
-            </p>
-            {EMERGENCY_CONTACTS.filter((c) => c.category === "company").map(
-              (contact) => (
-                <ContactCard key={contact.id} contact={contact} />
-              )
-            )}
           </div>
         </div>
       )}
