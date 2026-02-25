@@ -39,3 +39,6 @@ next-env.d.ts
 
 # claude code internal
 .omc/
+
+# test artifacts
+tests/screenshots/
