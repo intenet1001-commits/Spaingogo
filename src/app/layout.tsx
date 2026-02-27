@@ -4,8 +4,8 @@ import EmergencyButton from "@/components/EmergencyButton";
 import PWAInstall from "@/components/PWAInstall";
 
 export const metadata: Metadata = {
-  title: "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-  description: "Hotel & SPA Villa Olimpic@Suites 기준, 바르셀로나 최고의 맛집을 찾아보세요.",
+  title: "Spaingogo 🇪🇸 | 바르셀로나 최대 음식 플랫폼",
+  description: "바르셀로나 최대 음식 플랫폼 — 호텔 기준 맛집·명소를 한눈에 찾아보세요.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
@@ -14,6 +14,14 @@ export const metadata: Metadata = {
   },
   icons: {
     apple: "/icons/apple-touch-icon.png",
+  },
+  openGraph: {
+    title: "Spaingogo 🇪🇸 | 바르셀로나 최대 음식 플랫폼",
+    description: "바르셀로나 최대 음식 플랫폼 — 호텔 기준 맛집·명소를 한눈에 찾아보세요.",
+    url: "https://spaingogo.vercel.app",
+    siteName: "Spaingogo",
+    locale: "ko_KR",
+    type: "website",
   },
 };
 
