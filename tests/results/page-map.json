@@ -1,101 +1,533 @@
 {
-  "timestamp": "2026-02-24T16:47:33.538Z",
-  "baseUrl": "http://localhost:9020",
+  "base_url": "http://localhost:9020",
+  "scanned_at": "2026-02-25T01:52:52.689Z",
   "framework": "Next.js 15 (App Router)",
-  "routes": [
+  "viewport": "390x844 (iPhone 12 Pro)",
+  "pages": [
     {
-      "path": "/",
-      "name": "홈 (먹고/갈래 탭)",
+      "route": "/",
+      "name": "홈 (먹고?/갈래? 탭)",
+      "url": "http://localhost:9020/",
       "status": 200,
       "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "🇪🇸 🥘 Carrer de Pallars 기준 ¡Buen provecho! 바르셀로나 맛집 가이드  호텔에서 걸어갈 수 있는 최고의 맛집을 찾아보세요  🔍 타파스, 파에야, 핀초스... 🍽️ 먹고? 🗺️ 갈래? 🥘 타파스 🍚 파에야 🍢 핀초스 🍩 츄러스 🏨 호텔 근처 맛집 더보기 🥩 La Pepita 2.0km 4.5 · El Born"
+      "h1": [
+        "¡Buen provecho!\n바르셀로나 맛집 가이드"
+      ],
+      "h2": [
+        "🏨 호텔 근처 맛집",
+        "🔥 인기 맛집 TOP 6",
+        "🎯 상황별 추천"
+      ],
+      "internal_links": [
+        {
+          "href": "/restaurants",
+          "text": "🔍\n타파스, 파에야, 핀초스..."
+        },
+        {
+          "href": "/restaurants?category=tapas",
+          "text": "🥘\n타파스"
+        },
+        {
+          "href": "/restaurants?category=paella",
+          "text": "🍚\n파에야"
+        },
+        {
+          "href": "/restaurants?category=pintxos",
+          "text": "🍢\n핀초스"
+        },
+        {
+          "href": "/restaurants?category=churros",
+          "text": "🍩\n츄러스"
+        },
+        {
+          "href": "/nearby",
+          "text": "더보기"
+        },
+        {
+          "href": "/restaurants/18",
+          "text": "🥖\nLa Pepita\n2.0km\n4.5\n· El Born"
+        },
+        {
+          "href": "/restaurants/5",
+          "text": "🥘\nEl Xampanyet\n2.0km\n4.6\n· El Born"
+        },
+        {
+          "href": "/restaurants/1",
+          "text": "🥘\nBar del Pla\n2.1km\n4.5\n· Ciutat Vella"
+        },
+        {
+          "href": "/restaurants/11",
+          "text": "🦑\nLa Mar Salada\n2.1km\n4.6\n· Barceloneta"
+        },
+        {
+          "href": "/restaurants?sort=rating",
+          "text": "전체보기"
+        },
+        {
+          "href": "/restaurants/4",
+          "text": "🥘 Tickets\n⭐미슐랭\n\n알베르트 아드리아의 아방가르드 타파스 바. 예약 필수, 독창"
+        },
+        {
+          "href": "/restaurants/9",
+          "text": "🥘 Quimet & Quimet\n\n통조림 타파스의 명가. 세계 최고의 바 중 하나로 손꼽"
+        },
+        {
+          "href": "/restaurants/3",
+          "text": "🦑 La Cova Fumada\n\n봄바(Bomba) 감자 튀김의 원조. 예약 불가, 일찍 "
+        },
+        {
+          "href": "/restaurants/8",
+          "text": "🍚 Can Solé\n\n1903년 창업, 바르셀로네타 해변가 정통 해산물 파에야 레스토랑."
+        },
+        {
+          "href": "/restaurants/12",
+          "text": "🥩 Jamonísimo\n\n스페인 최고급 이베리코 하몬 전문점. 숙성 하몬 시식 및 와인 "
+        },
+        {
+          "href": "/restaurants/2",
+          "text": "🍚 Restaurante 7 Portes\n\n1836년 창업한 바르셀로나 최초의 레스토랑 "
+        },
+        {
+          "href": "/",
+          "text": "홈"
+        },
+        {
+          "href": "/nearby",
+          "text": "주변"
+        },
+        {
+          "href": "/restaurants",
+          "text": "맛집"
+        }
+      ],
+      "buttons": [
+        "🍽️ 먹고?",
+        "🗺️ 갈래?",
+        "😴\n피곤할 때",
+        "💑\n로맨틱한 밤",
+        "🥂\n친구들과",
+        "🤢\n해장이 필요해",
+        "🎉\n특별한 날",
+        "💰\n가성비로",
+        "🌅\n아침 일찍",
+        "🌙\n야식 생각",
+        "🍷\n와인 한 잔",
+        "📍\n가까운데서",
+        "🦞\n해산물 먹고파",
+        "🍩\n달달한 거",
+        "호텔",
+        "🆘\nSOS"
+      ],
+      "images_count": 6,
+      "has_bottom_nav": true,
+      "has_fab": true,
+      "page_specific": {
+        "tabCount": 0,
+        "hasRestaurantCards": false,
+        "hasAttractionCards": false
+      },
+      "console_errors": [],
+      "accessible": true
     },
     {
-      "path": "/restaurants",
+      "route": "/restaurants",
       "name": "맛집 목록",
+      "url": "http://localhost:9020/restaurants",
       "status": 200,
       "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "🇪🇸 바르셀로나 맛집 🇪🇸 전체 🥘 타파스 🍚 파에야 🍢 핀초스 🍩 츄러스 🥩 하몬 🦑 해산물 정렬: 평점순 거리순 리뷰순  총 20개 맛집  🥘 $$$$ ⭐ 미슐랭 58분 Tickets 4.8 (4,210) 3.8km  알베르트 아드리아의 아방가르드 타파스 바. 예약 필수, 독창적인 분자 요리.  Avinguda del Paral·le"
+      "h1": [
+        "🇪🇸 바르셀로나 맛집"
+      ],
+      "h2": [],
+      "internal_links": [
+        {
+          "href": "/restaurants/4",
+          "text": "🥘 $$$$\n⭐ 미슐랭\n58분\nTickets\n4.8\n(4,210)\n3.8km\n\n알베르트 "
+        },
+        {
+          "href": "/restaurants/9",
+          "text": "🥘 $$\n59분\nQuimet & Quimet\n4.8\n(3,940)\n3.9km\n\n통조림 타"
+        },
+        {
+          "href": "/restaurants/3",
+          "text": "🦑 $$\n35분\nLa Cova Fumada\n4.7\n(1,930)\n2.3km\n\n봄바(Bom"
+        },
+        {
+          "href": "/restaurants/8",
+          "text": "🍚 $$$\n35분\nCan Solé\n4.7\n(2,180)\n2.3km\n\n1903년 창업, 바"
+        },
+        {
+          "href": "/restaurants/12",
+          "text": "🥩 $$$\n57분\nJamonísimo\n4.7\n(1,640)\n3.8km\n\n스페인 최고급 이"
+        },
+        {
+          "href": "/restaurants/2",
+          "text": "🍚 $$$\n34분\nRestaurante 7 Portes\n4.6\n(5,120)\n2.2km\n"
+        },
+        {
+          "href": "/restaurants/5",
+          "text": "🥘 $$\n30분\nEl Xampanyet\n4.6\n(3,150)\n2.0km\n\n1929년부터 "
+        },
+        {
+          "href": "/restaurants/11",
+          "text": "🦑 $$$\n32분\nLa Mar Salada\n4.6\n(2,450)\n2.1km\n\n바르셀로네타"
+        },
+        {
+          "href": "/restaurants/14",
+          "text": "🥘 $$\n37분\nCafè de l'Acadèmia\n4.6\n(2,160)\n2.4km\n\n고딕"
+        },
+        {
+          "href": "/restaurants/17",
+          "text": "🍩 $\n42분\nChök\n4.6\n(2,380)\n2.8km\n\n창의적인 크로넛과 츄러스 전문점"
+        },
+        {
+          "href": "/restaurants/19",
+          "text": "🍚 $$$\n37분\nBarraca\n4.6\n(3,420)\n2.4km\n\n해변 바로 앞 파에야 "
+        },
+        {
+          "href": "/restaurants/1",
+          "text": "🥘 $$\n31분\nBar del Pla\n4.5\n(2,840)\n2.1km\n\n고딕지구의 클래식"
+        },
+        {
+          "href": "/restaurants/6",
+          "text": "🍩 $\n41분\nGranja M. Viader\n4.5\n(2,640)\n2.7km\n\n카카오 우"
+        },
+        {
+          "href": "/restaurants/10",
+          "text": "🍕 $$\n53분\nParking Pizza\n4.5\n(1,820)\n3.5km\n\n바르셀로나식 "
+        },
+        {
+          "href": "/restaurants/13",
+          "text": "🥘 $$\n57분\nBodega Sepúlveda\n4.5\n(980)\n3.7km\n\n산트 안토니"
+        },
+        {
+          "href": "/restaurants/16",
+          "text": "🦑 $$$$\n47분\nBoca Grande\n4.5\n(1,920)\n3.1km\n\n파세오 데 그"
+        },
+        {
+          "href": "/restaurants/18",
+          "text": "🥖 $$\n30분\nLa Pepita\n4.5\n(4,150)\n2.0km\n\n엘본 골목의 인기 보"
+        },
+        {
+          "href": "/restaurants/7",
+          "text": "🍢 $$\n46분\nCervecería Catalana\n4.4\n(6,830)\n3.1km\n\n에"
+        },
+        {
+          "href": "/restaurants/15",
+          "text": "🍢 $$\n56분\nBar Calders\n4.4\n(3,280)\n3.7km\n\n산트 안토니의 트"
+        },
+        {
+          "href": "/restaurants/20",
+          "text": "🥘 $$$\n42분\nEl Nacional\n4.4\n(5,670)\n2.8km\n\n파세오 데 그라"
+        }
+      ],
+      "buttons": [
+        "🇪🇸\n전체",
+        "🥘\n타파스",
+        "🍚\n파에야",
+        "🍢\n핀초스",
+        "🍩\n츄러스",
+        "🥩\n하몬",
+        "🦑\n해산물",
+        "평점순",
+        "거리순",
+        "리뷰순",
+        "호텔",
+        "🆘\nSOS"
+      ],
+      "images_count": 20,
+      "has_bottom_nav": true,
+      "has_fab": true,
+      "page_specific": {},
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "accessible": true
     },
     {
-      "path": "/restaurants/1",
-      "name": "맛집 상세 (Bar del Pla)",
+      "route": "/attractions",
+      "name": "관광명소 목록",
+      "url": "http://localhost:9020/attractions",
       "status": 200,
       "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "🥘 Ciutat Vella Bar del Pla 4.5 (2,840) · $$ · 31분 (호텔에서 2.1km)  고딕지구의 클래식 카탈루냐 타파스 바. 현지인들에게 사랑받는 숨은 명소.  Carrer de la Montcada, 2, Ciutat Vella, Barcelona  지도에서 보기 →  12:00 - 23:00  #타파스 #카탈루냐 #와인 #"
+      "h1": [
+        "🇪🇸 바르셀로나 관광"
+      ],
+      "h2": [],
+      "internal_links": [
+        {
+          "href": "/attractions/a1",
+          "text": "⛪\n€26\n30분\nSagrada Família\n4.9\n(285,000)\n·\n90분\n2.0k"
+        },
+        {
+          "href": "/attractions/a3",
+          "text": "🏛️\n€35\n42분\nCasa Batlló\n4.8\n(87,000)\n·\n75분\n2.8km\n\n"
+        },
+        {
+          "href": "/attractions/a9",
+          "text": "🎵\n가이드투어 €22, 공연은 별도\n33분\nPalau de la Música Catala"
+        },
+        {
+          "href": "/attractions/a2",
+          "text": "🌳\n€10 (기념 구역 유료, 공원 자체는 무료)\n62분\nPark Güell\n4.7\n(1"
+        },
+        {
+          "href": "/attractions/a4",
+          "text": "🏛️\n€28\n45분\nLa Pedrera-Casa Milà\n4.7\n(72,000)\n·\n75"
+        },
+        {
+          "href": "/attractions/a15",
+          "text": "🌃\n무료\n72분\nMagic Fountain (Font Màgica)\n4.7\n(118,00"
+        },
+        {
+          "href": "/attractions/a18",
+          "text": "🛍️\n무료\n43분\nPasseig de Gràcia\n4.7\n(145,000)\n·\n60분\n2"
+        },
+        {
+          "href": "/attractions/a20",
+          "text": "⚽\n€28 (투어 기본), €35 (피치 포함)\n98분\nCamp Nou\n4.7\n(98,00"
+        },
+        {
+          "href": "/attractions/a6",
+          "text": "🏛️\n무료\n36분\nGothic Quarter\n4.6\n(134,000)\n·\n120분\n2.4"
+        },
+        {
+          "href": "/attractions/a8",
+          "text": "🖼️\n€14 (상설전), 목요일 18:00\n30분\nPicasso Museum\n4.6\n(9"
+        },
+        {
+          "href": "/attractions/a10",
+          "text": "🌳\n무료 (동물원 별도)\n22분\nParc de la Ciutadella\n4.6\n(88,0"
+        },
+        {
+          "href": "/attractions/a12",
+          "text": "🖼️\n€12 (토요일 15:00\n74분\nMNAC - National Art Museum\n"
+        },
+        {
+          "href": "/attractions/a11",
+          "text": "🏛️\n무료\n24분\nArc de Triomf\n4.5\n(62,000)\n·\n30분\n1.6km\n"
+        },
+        {
+          "href": "/attractions/a14",
+          "text": "🏰\n€9 (성인), 일요일 15:00\n67분\nMontjuïc Castle\n4.5\n(41,"
+        },
+        {
+          "href": "/attractions/a16",
+          "text": "🎨\n€15 (성인)\n66분\nFundació Joan Miró\n4.5\n(33,000)\n·\n"
+        },
+        {
+          "href": "/attractions/a19",
+          "text": "🚶\n무료\n36분\nBarceloneta Boardwalk\n4.5\n(76,000)\n·\n60분"
+        },
+        {
+          "href": "/attractions/a5",
+          "text": "🛍️\n무료\n42분\nLa Boqueria Market\n4.4\n(156,000)\n·\n60분\n"
+        },
+        {
+          "href": "/attractions/a13",
+          "text": "🎡\n€35.5 (성인), 키 90cm 이하 무료\n106분\nTibidabo Amusemen"
+        },
+        {
+          "href": "/attractions/a17",
+          "text": "🏛️\n무료 (기획전 별도)\n28분\nEl Born Cultural Centre\n4.4\n(2"
+        },
+        {
+          "href": "/attractions/a7",
+          "text": "🏖️\n무료\n36분\nBarceloneta Beach\n4.3\n(210,000)\n·\n120분\n"
+        }
+      ],
+      "buttons": [
+        "🗺️\n전체",
+        "🏛️\n랜드마크",
+        "🖼️\n박물관",
+        "🏖️\n해변",
+        "🌳\n공원",
+        "🛍️\n쇼핑",
+        "🎡\n액티비티",
+        "🌃\n야경",
+        "평점순",
+        "거리순",
+        "🆓 무료만",
+        "호텔",
+        "🆘\nSOS"
+      ],
+      "images_count": 20,
+      "has_bottom_nav": true,
+      "has_fab": true,
+      "page_specific": {},
+      "console_errors": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "accessible": true
     },
     {
-      "path": "/attractions",
-      "name": "명소 목록",
+      "route": "/nearby",
+      "name": "주변",
+      "url": "http://localhost:9020/nearby",
       "status": 200,
       "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "🇪🇸 바르셀로나 관광 🗺️ 전체 🏛️ 랜드마크 🖼️ 박물관 🏖️ 해변 🌳 공원 🛍️ 쇼핑 🎡 액티비티 🌃 야경 정렬: 평점순 거리순 🆓 무료만  총 20개 관광지  ⛪ €26 30분 Sagrada Família 4.9 (285,000) · 90분 2.0km  가우디의 미완성 걸작. 130년째 건설 중인 세계적 성당으로 내부의 스테인드글라"
+      "h1": [
+        "주변 맛집"
+      ],
+      "h2": [],
+      "internal_links": [
+        {
+          "href": "/restaurants/18",
+          "text": "🥖 $$\n30분\nLa Pepita\n4.5\n(4,150)\n2.0km\n\n엘본 골목의 인기 보"
+        },
+        {
+          "href": "/restaurants/5",
+          "text": "🥘 $$\n30분\nEl Xampanyet\n4.6\n(3,150)\n2.0km\n\n1929년부터 "
+        },
+        {
+          "href": "/",
+          "text": "홈"
+        },
+        {
+          "href": "/nearby",
+          "text": "주변"
+        },
+        {
+          "href": "/restaurants",
+          "text": "맛집"
+        },
+        {
+          "href": "/attractions",
+          "text": "명소"
+        }
+      ],
+      "buttons": [
+        "500m",
+        "1km",
+        "2km",
+        "3km",
+        "호텔",
+        "🆘\nSOS"
+      ],
+      "images_count": 2,
+      "has_bottom_nav": true,
+      "has_fab": true,
+      "page_specific": {},
+      "console_errors": [],
+      "accessible": true
     },
     {
-      "path": "/attractions/a1",
-      "name": "명소 상세 (Sagrada Família)",
-      "status": 200,
-      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "€26 ⛪ Eixample Sagrada Família 4.9 (285,000) · 약 90분 · 30분 (호텔에서 2.0km)  가우디의 미완성 걸작. 130년째 건설 중인 세계적 성당으로 내부의 스테인드글라스는 압도적인 아름다움을 선사합니다. 2026년 완공을 향해 달려가는 살아있는 건축 역사입니다.  Carrer de Mallorca, 401, Eix"
-    },
-    {
-      "path": "/nearby",
-      "name": "주변 탭",
-      "status": 200,
-      "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "주변 맛집  위치 확인 중...  500m 1km 2km 3km  위치 확인 중...  호텔 홈 주변 맛집 명소 🆘 SOS"
-    },
-    {
-      "path": "/bookmarks",
+      "route": "/bookmarks",
       "name": "북마크",
+      "url": "http://localhost:9020/bookmarks",
       "status": 200,
       "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "즐겨찾기  0개의 맛집을 저장했어요  저장된 맛집이 없어요  마음에 드는 맛집을 즐겨찾기에 추가해보세요  호텔 홈 주변 맛집 명소 🆘 SOS"
+      "h1": [
+        "즐겨찾기"
+      ],
+      "h2": [],
+      "internal_links": [
+        {
+          "href": "/",
+          "text": "홈"
+        },
+        {
+          "href": "/nearby",
+          "text": "주변"
+        },
+        {
+          "href": "/restaurants",
+          "text": "맛집"
+        },
+        {
+          "href": "/attractions",
+          "text": "명소"
+        }
+      ],
+      "buttons": [
+        "호텔",
+        "🆘\nSOS"
+      ],
+      "images_count": 0,
+      "has_bottom_nav": true,
+      "has_fab": true,
+      "page_specific": {},
+      "console_errors": [],
+      "accessible": true
     },
     {
-      "path": "/emergency",
+      "route": "/emergency",
       "name": "긴급연락처",
+      "url": "http://localhost:9020/emergency",
       "status": 200,
       "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "🆘 홈으로 EMERGENCY GUIDE 긴급 연락처  바르셀로나 긴급 연락처 및 안전 가이드  전화번호를 탭하면 즉시 전화연결됩니다  🚨 긴급 (즉시 연결) 🆘  긴급전화 (경찰/소방/구급)  긴급  유럽 통합 긴급번호. 모든 긴급상황에 발신 가능  112 🚑  구급대  긴급  의료 응급상황  061 🚒  소방  긴급  화재 신고  080 👮 경"
+      "h1": [
+        "긴급 연락처"
+      ],
+      "h2": [
+        "🚨 긴급 (즉시 연결)",
+        "👮 경찰",
+        "🇰🇷 영사관 & 호텔",
+        "🛡️ 바르셀로나 안전 가이드"
+      ],
+      "internal_links": [
+        {
+          "href": "/",
+          "text": "홈으로"
+        },
+        {
+          "href": "/",
+          "text": "홈"
+        },
+        {
+          "href": "/nearby",
+          "text": "주변"
+        },
+        {
+          "href": "/restaurants",
+          "text": "맛집"
+        },
+        {
+          "href": "/attractions",
+          "text": "명소"
+        }
+      ],
+      "buttons": [
+        "호텔로 돌아가기",
+        "🆘\nSOS"
+      ],
+      "images_count": 0,
+      "has_bottom_nav": true,
+      "has_fab": true,
+      "page_specific": {},
+      "console_errors": [],
+      "accessible": true
     },
     {
-      "path": "/admin",
-      "name": "관리자 페이지",
+      "route": "/admin",
+      "name": "관리자",
+      "url": "http://localhost:9020/admin",
       "status": 200,
       "title": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드",
-      "preview": "관리자 로그인  Spaingogo 관리 대시보드  로그인  관리자 전용 페이지입니다  🆘 SOS"
+      "h1": [
+        "관리자 로그인"
+      ],
+      "h2": [],
+      "internal_links": [],
+      "buttons": [
+        "로그인",
+        "🆘\nSOS"
+      ],
+      "images_count": 0,
+      "has_bottom_nav": false,
+      "has_fab": true,
+      "page_specific": {},
+      "console_errors": [],
+      "accessible": true
     }
   ],
-  "components": [
-    "HomeTabs (먹고/갈래)",
-    "SituationChips-맛집",
-    "SOS Emergency Button",
-    "BottomNav (nav element)",
-    "Chip: 피곤할 때",
-    "Chip: 로맨틱한 밤",
-    "Chip: 빠르게 먹자",
-    "Buttons: 🍽️ 먹고? | 🗺️ 갈래? | 😴피곤할 때 | 💑로맨틱한 밤 | 🥂친구들과 | 🤢해장이 필요해 | 🎉특별한 날 | 💰가성비로 | 🌅아침 일찍 | 🌙야식 생각 | 🍷와인 한 잔 | ⚡빠르게 먹자 | 🦞해산물 먹고파 | 🍩달달한 거 | 호텔"
-  ],
-  "apiEndpoints": [
-    {
-      "endpoint": "/api/restaurants",
-      "status": 200,
-      "ok": true,
-      "preview": "{\"restaurants\":[{\"id\":\"4\",\"name\":\"Tickets\",\"category\":\"tapas\",\"categoryEmoji\":\"🥘\",\"rating\":4.8,\"rev"
-    },
-    {
-      "endpoint": "/api/attractions",
-      "status": 200,
-      "ok": true,
-      "preview": "{\"attractions\":[{\"id\":\"a1\",\"name\":\"Sagrada Família\",\"category\":\"landmark\",\"categoryEmoji\":\"⛪\",\"ratin"
-    }
-  ],
-  "dataStats": {
-    "restaurants": 20,
-    "attractions": 20,
-    "emergencyContacts": 6,
-    "situationChips_restaurant": 12,
-    "situationChips_attraction": 12
+  "summary": {
+    "total_pages": 7,
+    "accessible": 7,
+    "inaccessible": 0,
+    "pages_with_console_errors": 2,
+    "success_rate": "100%"
   }
 }

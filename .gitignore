@@ -42,3 +42,6 @@ next-env.d.ts
 
 # test artifacts
 tests/screenshots/
+
+# user-generated data (comments)
+/comments.json

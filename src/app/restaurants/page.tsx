@@ -82,6 +82,7 @@ function RestaurantListContent() {
             { id: "rating", label: "평점순" },
             { id: "distance", label: "거리순" },
             { id: "reviews", label: "리뷰순" },
+            { id: "memberReviews", label: "MWC멤버리뷰순" },
           ].map(({ id, label }) => (
             <button
               key={id}

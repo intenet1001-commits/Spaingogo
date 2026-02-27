@@ -1,463 +1,238 @@
 {
-  "timestamp": "2026-02-24T16:50:53.671Z",
-  "testSuite": "Functional Tests",
-  "passed": 10,
-  "failed": 2,
+  "tested_at": "2026-02-25T01:57:59.812Z",
+  "base_url": "http://localhost:9020",
   "tests": [
     {
-      "name": "홈 페이지 로드",
-      "status": "pass",
-      "detail": "Spaingogo 🇪🇸 | 바르셀로나 맛집 가이드"
+      "name": "홈 탭 - 먹고? 버튼 존재",
+      "category": "navigation",
+      "passed": true,
+      "details": "버튼 표시됨",
+      "error": null
     },
     {
-      "name": "탭 스위치",
-      "status": "fail",
-      "detail": "locator.click: Error: strict mode violation: getByRole('button', { name: /먹고/ }) resolved to 2 elements:\n    1) <button class=\"flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-white dark:bg-[#3A2E24] shadow-warm text-[#C60B1E]\">🍽️ 먹고?</button> aka getByRole('button', { name: '🍽️ 먹고?' })\n    2) <button class=\"flex flex-col items-center gap-1 p-2.5 rounded-2xl text-center transition-all duration-200 active:scale-95 border bg-[#F5F0E8] dark:bg-[#2A2018] text-[#4A3E30] dark:text-[#C8B898] border-[#E8DDD0] dark:border-[#3A2E24] hover:border-[#C60B1E]/40\">…</button> aka getByRole('button', { name: '🦞 해산물 먹고파' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /먹고/ })\u001b[22m\n"
+      "name": "홈 탭 - 갈래? 버튼 존재",
+      "category": "navigation",
+      "passed": true,
+      "details": "버튼 표시됨",
+      "error": null
     },
     {
-      "name": "BottomNav - 주변",
-      "status": "pass",
-      "detail": "http://localhost:9020/nearby"
+      "name": "갈래? 탭 클릭 후 컨텐츠 변경",
+      "category": "navigation",
+      "passed": true,
+      "details": "H2 목록: 🏨 호텔 근처 명소, ✨ 인기 명소 TOP 6, 🗺️ 상황별 관광 추천",
+      "error": null
     },
     {
-      "name": "BottomNav - 맛집",
-      "status": "pass",
-      "detail": "http://localhost:9020/restaurants"
+      "name": "SOS 플로팅 버튼 존재",
+      "category": "sos",
+      "passed": false,
+      "details": "SOS 버튼 없음",
+      "error": null
     },
     {
-      "name": "BottomNav - 명소",
-      "status": "pass",
-      "detail": "http://localhost:9020/attractions"
+      "name": "호텔 FAB 버튼 존재",
+      "category": "navigation",
+      "passed": true,
+      "details": "호텔 버튼 표시됨",
+      "error": null
     },
     {
-      "name": "맛집 상세 페이지",
-      "status": "pass",
-      "detail": "http://localhost:9020/restaurants/4"
+      "name": "맛집 카드 목록 표시",
+      "category": "content",
+      "passed": true,
+      "details": "20개 맛집 카드",
+      "error": null
     },
     {
-      "name": "명소 상세 페이지",
-      "status": "pass",
-      "detail": "http://localhost:9020/attractions/a1"
+      "name": "카테고리 필터 버튼 존재",
+      "category": "filter",
+      "passed": true,
+      "details": "12개 버튼: 🇪🇸\n전체, 🥘\n타파스, 🍚\n파에야, 🍢\n핀초스, 🍩\n츄러스",
+      "error": null
     },
     {
-      "name": "SOS 버튼",
-      "status": "fail",
-      "detail": "SOS 버튼이 보이지 않음"
+      "name": "타파스 필터 동작",
+      "category": "filter",
+      "passed": true,
+      "details": "필터 후 8개 항목",
+      "error": null
     },
     {
-      "name": "호텔 FAB 버튼",
-      "status": "pass",
-      "detail": "표시됨"
+      "name": "평점순 정렬 버튼 존재",
+      "category": "sort",
+      "passed": true,
+      "details": "버튼 표시됨",
+      "error": null
     },
     {
-      "name": "/emergency 연락처 표시",
-      "status": "pass",
-      "detail": "112/061/091/092 모두 확인"
+      "name": "맛집 상세 페이지 이동",
+      "category": "navigation",
+      "passed": true,
+      "details": "상세: Tickets",
+      "error": null
     },
     {
-      "name": "카테고리 필터 - 타파스",
-      "status": "pass",
-      "detail": "타파스 필터 동작"
+      "name": "맛집 상세 - 예약 정보 표시",
+      "category": "content",
+      "passed": true,
+      "details": "예약 정보 있음",
+      "error": null
     },
     {
-      "name": "/bookmarks 페이지",
-      "status": "pass",
-      "detail": "정상 로드"
-    }
-  ],
-  "situationChips": {
-    "restaurant": [
-      {
-        "label": "피곤할 때",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 3,
-        "issues": []
-      },
-      {
-        "label": "로맨틱한 밤",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "친구들과",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "해장이 필요해",
-        "status": "warning",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 2,
-        "issues": [
-          "부적절한 결과 포함: 츄러스"
-        ]
-      },
-      {
-        "label": "특별한 날",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "가성비로",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 3,
-        "issues": []
-      },
-      {
-        "label": "아침 일찍",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 3,
-        "issues": []
-      },
-      {
-        "label": "야식 생각",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 3,
-        "issues": []
-      },
-      {
-        "label": "와인 한 잔",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "빠르게 먹자",
-        "status": "결과없음",
-        "noResult": true,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 1,
-        "issues": [
-          "결과 없음 메시지 표시"
-        ]
-      },
-      {
-        "label": "해산물 먹고파",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "달달한 거",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 6,
-        "resultNames": [
-          "🥩La Pepita2.0km4.5· El Born",
-          "🥘El Xampanyet2.0km4.6· El Born",
-          "🥘Bar del Pla2.1km4.5· Ciutat Vella",
-          "🦑La Mar Salada2.1km4.6· Barceloneta",
-          "🥘 Tickets"
-        ],
-        "score": 3,
-        "issues": [
-          "예상보다 많은 결과: 6개 (예상 max 3)"
-        ]
-      }
-    ],
-    "attraction": [
-      {
-        "label": "사진 찍기 좋은",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 5,
-        "issues": []
-      },
-      {
-        "label": "걷기 좋은",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "아이와 함께",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "무료 입장",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "야경 보러",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 13,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "역사 탐방",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "해변 즐기기",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 12,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "비 올 때",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "쇼핑하기",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 12,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      },
-      {
-        "label": "호텔 근처",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 11,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 3,
-        "issues": []
-      },
-      {
-        "label": "반나절 코스",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 3,
-        "issues": []
-      },
-      {
-        "label": "예술 감상",
-        "status": "pass",
-        "noResult": false,
-        "cardCount": 14,
-        "resultNames": [
-          "Parc de la Ciutadella",
-          "Arc de Triomf",
-          "El Born Cultural Centre",
-          "Picasso Museum",
-          "⛪ Sagrada Família"
-        ],
-        "score": 4,
-        "issues": []
-      }
-    ]
-  },
-  "issues": [
-    {
-      "name": "탭 스위치",
-      "detail": "locator.click: Error: strict mode violation: getByRole('button', { name: /먹고/ }) resolved to 2 elements:\n    1) <button class=\"flex-1 flex items-center justify-center gap-1.5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 bg-white dark:bg-[#3A2E24] shadow-warm text-[#C60B1E]\">🍽️ 먹고?</button> aka getByRole('button', { name: '🍽️ 먹고?' })\n    2) <button class=\"flex flex-col items-center gap-1 p-2.5 rounded-2xl text-center transition-all duration-200 active:scale-95 border bg-[#F5F0E8] dark:bg-[#2A2018] text-[#4A3E30] dark:text-[#C8B898] border-[#E8DDD0] dark:border-[#3A2E24] hover:border-[#C60B1E]/40\">…</button> aka getByRole('button', { name: '🦞 해산물 먹고파' })\n\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: /먹고/ })\u001b[22m\n"
+      "name": "관광명소 카드 목록 표시",
+      "category": "content",
+      "passed": true,
+      "details": "20개 명소 카드",
+      "error": null
     },
     {
-      "name": "SOS 버튼",
-      "detail": "SOS 버튼이 보이지 않음"
+      "name": "무료만 필터 동작",
+      "category": "filter",
+      "passed": true,
+      "details": "전체 20개 → 필터 7개",
+      "error": null
+    },
+    {
+      "name": "명소 상세 페이지 이동",
+      "category": "navigation",
+      "passed": true,
+      "details": "상세: Magic Fountain (Font Màgica)",
+      "error": null
+    },
+    {
+      "name": "주변 페이지 로드",
+      "category": "content",
+      "passed": true,
+      "details": "H1: 주변 맛집",
+      "error": null
+    },
+    {
+      "name": "500m 거리 필터 버튼",
+      "category": "filter",
+      "passed": true,
+      "details": "표시됨",
+      "error": null
+    },
+    {
+      "name": "500m 필터 클릭 동작",
+      "category": "filter",
+      "passed": true,
+      "details": "0개 결과",
+      "error": null
+    },
+    {
+      "name": "북마크 페이지 로드",
+      "category": "content",
+      "passed": true,
+      "details": "H1: 즐겨찾기",
+      "error": null
+    },
+    {
+      "name": "112 번호 표시",
+      "category": "emergency",
+      "passed": true,
+      "details": "포함됨",
+      "error": null
+    },
+    {
+      "name": "061 번호 표시",
+      "category": "emergency",
+      "passed": true,
+      "details": "포함됨",
+      "error": null
+    },
+    {
+      "name": "영사관 정보 표시",
+      "category": "emergency",
+      "passed": true,
+      "details": "포함됨",
+      "error": null
+    },
+    {
+      "name": "호텔로 돌아가기 버튼",
+      "category": "navigation",
+      "passed": true,
+      "details": "표시됨",
+      "error": null
+    },
+    {
+      "name": "관리자 로그인 페이지 로드",
+      "category": "auth",
+      "passed": true,
+      "details": "H1: 관리자 로그인",
+      "error": null
+    },
+    {
+      "name": "비밀번호 입력 필드 존재",
+      "category": "auth",
+      "passed": true,
+      "details": "필드 있음",
+      "error": null
+    },
+    {
+      "name": "잘못된 비밀번호 처리",
+      "category": "auth",
+      "passed": true,
+      "details": "오류 처리 확인됨",
+      "error": null
+    },
+    {
+      "name": "BottomNav - 주변 링크",
+      "category": "navigation",
+      "passed": true,
+      "details": "표시됨",
+      "error": null
+    },
+    {
+      "name": "BottomNav - 맛집 링크",
+      "category": "navigation",
+      "passed": true,
+      "details": "표시됨",
+      "error": null
+    },
+    {
+      "name": "BottomNav - 명소 링크",
+      "category": "navigation",
+      "passed": true,
+      "details": "표시됨",
+      "error": null
     }
   ],
   "summary": {
-    "totalTests": 12,
-    "passed": 10,
-    "failed": 2,
-    "avgRestaurantChipScore": 3.2,
-    "avgAttractionChipScore": 3.9,
-    "emptyChips": {
-      "restaurant": [
-        "빠르게 먹자"
-      ],
-      "attraction": []
+    "total": 28,
+    "passed": 27,
+    "failed": 1,
+    "pass_rate": "96%",
+    "categories": {
+      "navigation": {
+        "passed": 10,
+        "failed": 0
+      },
+      "sos": {
+        "passed": 0,
+        "failed": 1
+      },
+      "content": {
+        "passed": 5,
+        "failed": 0
+      },
+      "filter": {
+        "passed": 5,
+        "failed": 0
+      },
+      "sort": {
+        "passed": 1,
+        "failed": 0
+      },
+      "emergency": {
+        "passed": 3,
+        "failed": 0
+      },
+      "auth": {
+        "passed": 3,
+        "failed": 0
+      }
     }
   }
 }

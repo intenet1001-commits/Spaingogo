@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 import restaurantsData from "@/infrastructure/data/restaurants.json";
 import { distanceFromHotel, formatDistance, walkingMinutes } from "@/domain/services/DistanceCalculatorService";
 
@@ -22,6 +24,22 @@ export interface Restaurant {
   distanceMeters?: number;
   distanceText?: string;
   walkingMinutes?: number;
+}
+
+const COMMENTS_FILE = path.join(process.cwd(), "comments.json");
+
+function getCommentCountMap(type: string): Record<string, number> {
+  try {
+    if (!fs.existsSync(COMMENTS_FILE)) return {};
+    const data = JSON.parse(fs.readFileSync(COMMENTS_FILE, "utf-8"));
+    const counts: Record<string, number> = {};
+    for (const c of data.comments || []) {
+      if (c.type === type) counts[c.placeId] = (counts[c.placeId] ?? 0) + 1;
+    }
+    return counts;
+  } catch {
+    return {};
+  }
 }
 
 export async function GET(req: NextRequest) {
@@ -139,6 +157,9 @@ export async function GET(req: NextRequest) {
     results.sort((a, b) => (a.distanceMeters ?? 0) - (b.distanceMeters ?? 0));
   } else if (sort === "reviews") {
     results.sort((a, b) => b.reviewCount - a.reviewCount);
+  } else if (sort === "memberReviews") {
+    const countMap = getCommentCountMap("restaurant");
+    results.sort((a, b) => (countMap[b.id] ?? 0) - (countMap[a.id] ?? 0));
   }
 
   return NextResponse.json({ restaurants: results, total: results.length });

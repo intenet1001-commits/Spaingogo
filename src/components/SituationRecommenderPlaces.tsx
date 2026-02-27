@@ -11,7 +11,7 @@ import attractionsData from "@/infrastructure/data/attractions.json";
 const SITUATIONS = [
   { id: "photo",    emoji: "📸", label: "사진 찍기 좋은",  desc: "인생샷 명소" },
   { id: "walk",     emoji: "🚶", label: "걷기 좋은",       desc: "산책 & 거닐기 좋은 곳" },
-  { id: "kids",     emoji: "👨‍👩‍👧", label: "아이와 함께",    desc: "온 가족이 즐길 수 있는 곳" },
+  { id: "church",   emoji: "⛪", label: "한인교회",        desc: "바르셀로나 한서교회 (한인교회)" },
   { id: "free",     emoji: "🆓", label: "무료 입장",       desc: "돈 안 드는 명소" },
   { id: "night",    emoji: "🌃", label: "야경 보러",        desc: "밤에 빛나는 바르셀로나" },
   { id: "history",  emoji: "📚", label: "역사 탐방",        desc: "유적 & 역사 문화" },
@@ -50,13 +50,9 @@ function filterBySituation(id: SituationId) {
         .sort((a, b) => b.rating - a.rating)
         .slice(0, 4);
 
-    case "kids":
+    case "church":
       return all
-        .filter((a) =>
-          a.tags.some((t) => ["아이와함께", "놀이공원", "보트", "공원"].includes(t)) ||
-          a.category === "activity" ||
-          a.category === "park"
-        )
+        .filter((a) => a.tags.some((t) => ["한인교회", "교회", "예배"].includes(t)))
         .sort((a, b) => b.rating - a.rating)
         .slice(0, 4);
 
@@ -146,7 +142,7 @@ export default function SituationRecommenderPlaces() {
   return (
     <section className="px-4 pt-6">
       <h2 className="font-serif text-xl font-bold text-[#1A1209] dark:text-[#F5F0E8] mb-1">
-        🗺️ 상황별 관광 추천
+        🗺️ 상황별 추천
       </h2>
       <p className="text-xs text-[#8A7A6A] mb-3">지금 원하는 여행 스타일을 선택하세요</p>
 
@@ -219,10 +215,12 @@ export default function SituationRecommenderPlaces() {
                         </h3>
                       </div>
                       <div className="flex items-center flex-wrap gap-x-2 gap-y-0.5 text-xs text-[#6B5E4E] dark:text-[#B8A898]">
-                        <span className="flex items-center gap-0.5">
-                          <Star size={10} className="fill-[#FFC400] text-[#FFC400]" />
-                          {a.rating.toFixed(1)}
-                        </span>
+                        {a.reviewCount > 0 && (
+                          <span className="flex items-center gap-0.5">
+                            <Star size={10} className="fill-[#FFC400] text-[#FFC400]" />
+                            {a.rating.toFixed(1)}
+                          </span>
+                        )}
                         <span className="flex items-center gap-0.5 text-[#C60B1E] font-medium">
                           <Hotel size={10} />
                           {a.distanceText}

@@ -1,70 +1,121 @@
 {
-  "timestamp": "2026-02-24T16:50:55.053Z",
-  "testSuite": "Performance Audit",
-  "pages": [
+  "tested_at": "2026-02-25T01:58:02.156Z",
+  "base_url": "http://localhost:9020",
+  "measurements": [
     {
-      "path": "/",
-      "name": "홈",
-      "TTFB": 491,
-      "TTFB_grade": "Good",
-      "FCP": 760,
-      "LCP": null,
-      "CLS": 0,
-      "resources": [],
-      "domContentLoaded": 459,
-      "loadTime": 894,
-      "resourceCount": 14,
-      "totalResourceSize": 2718437,
-      "slowResources": [],
-      "FCP_grade": "Good",
-      "CLS_grade": "Good"
+      "route": "/",
+      "device": "mobile",
+      "fcp": 372,
+      "lcp": 372,
+      "cls": 0.0004,
+      "ttfb": 30,
+      "dom_content_loaded": 369,
+      "load_complete": 611,
+      "resource_count": 15,
+      "js_heap_mb": 54,
+      "total_load_time_ms": 1113,
+      "grades": {
+        "fcp": "Good",
+        "lcp": "Good",
+        "cls": "Good",
+        "ttfb": "Good"
+      },
+      "overall_grade": "A"
     },
     {
-      "path": "/restaurants",
-      "name": "맛집 목록",
-      "TTFB": 460,
-      "TTFB_grade": "Good",
-      "FCP": 448,
-      "LCP": null,
-      "CLS": 0,
-      "resources": [],
-      "domContentLoaded": 431,
-      "loadTime": 803,
-      "resourceCount": 14,
-      "totalResourceSize": 2391996,
-      "slowResources": [],
-      "FCP_grade": "Good",
-      "CLS_grade": "Good"
+      "route": "/restaurants",
+      "device": "mobile",
+      "fcp": 296,
+      "lcp": 396,
+      "cls": 0.0001,
+      "ttfb": 30,
+      "dom_content_loaded": 296,
+      "load_complete": 510,
+      "resource_count": 20,
+      "js_heap_mb": 58,
+      "total_load_time_ms": 1011,
+      "grades": {
+        "fcp": "Good",
+        "lcp": "Good",
+        "cls": "Good",
+        "ttfb": "Good"
+      },
+      "overall_grade": "A"
     },
     {
-      "path": "/attractions",
-      "name": "명소 목록",
-      "TTFB": 383,
-      "TTFB_grade": "Good",
-      "FCP": 408,
-      "LCP": null,
-      "CLS": 0,
-      "resources": [],
-      "domContentLoaded": 354,
-      "loadTime": 758,
-      "resourceCount": 14,
-      "totalResourceSize": 2342794,
-      "slowResources": [],
-      "FCP_grade": "Good",
-      "CLS_grade": "Good"
+      "route": "/attractions",
+      "device": "mobile",
+      "fcp": 284,
+      "lcp": 404,
+      "cls": 0.0001,
+      "ttfb": 28,
+      "dom_content_loaded": 287,
+      "load_complete": 547,
+      "resource_count": 19,
+      "js_heap_mb": 58,
+      "total_load_time_ms": 1049,
+      "grades": {
+        "fcp": "Good",
+        "lcp": "Good",
+        "cls": "Good",
+        "ttfb": "Good"
+      },
+      "overall_grade": "A"
+    },
+    {
+      "route": "/",
+      "device": "desktop",
+      "fcp": 352,
+      "lcp": 352,
+      "cls": 0.0001,
+      "ttfb": 35,
+      "dom_content_loaded": 342,
+      "load_complete": 640,
+      "resource_count": 13,
+      "js_heap_mb": 51,
+      "total_load_time_ms": 1142,
+      "grades": {
+        "fcp": "Good",
+        "lcp": "Good",
+        "cls": "Good",
+        "ttfb": "Good"
+      },
+      "overall_grade": "A"
     }
   ],
   "summary": {
-    "FCP": "760ms",
-    "FCP_grade": "Good",
-    "LCP": "N/A",
-    "LCP_grade": "N/A",
-    "CLS": 0,
-    "CLS_grade": "Good",
-    "TTFB": "491ms",
-    "TTFB_grade": "Good",
-    "resourceCount": 14,
-    "totalResourceSizeKB": 2655,
-    "overallGrade": "A"
+    "primary_page": "/",
+    "device": "mobile",
+    "fcp_ms": 372,
+    "fcp_grade": "Good",
+    "lcp_ms": 372,
+    "lcp_grade": "Good",
+    "cls": 0.0004,
+    "cls_grade": "Good",
+    "ttfb_ms": 30,
+    "ttfb_grade": "Good",
+    "overall_grade": "A",
+    "resource_count": 15,
+    "js_heap_mb": 54,
+    "all_pages_grades": [
+      {
+        "route": "/",
+        "grade": "A",
+        "fcp": 372,
+        "lcp": 372
+      },
+      {
+        "route": "/restaurants",
+        "grade": "A",
+        "fcp": 296,
+        "lcp": 396
+      },
+      {
+        "route": "/attractions",
+        "grade": "A",
+        "fcp": 284,
+        "lcp": 404
+      }
+    ]
   }
 }

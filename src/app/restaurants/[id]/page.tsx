@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Star, MapPin, Clock, ChevronLeft, Navigation, Footprints } from "lucide-react";
 import HotelNavigationButton from "@/components/HotelNavigationButton";
 import BottomNav from "@/components/BottomNav";
+import LikeButton from "@/components/LikeButton";
+import CommentSection from "@/components/CommentSection";
 import restaurantsData from "@/infrastructure/data/restaurants.json";
 import { distanceFromHotel, formatDistance, walkingMinutes } from "@/domain/services/DistanceCalculatorService";
 
@@ -85,6 +87,7 @@ export default async function RestaurantDetailPage({ params }: Props) {
             <Star size={16} className="fill-[#FFC400] text-[#FFC400]" />
             <span className="font-bold text-[#1A1209] dark:text-[#F5F0E8]">{restaurant.rating.toFixed(1)}</span>
             <span className="text-sm text-[#8A7A6A]">({restaurant.reviewCount.toLocaleString()})</span>
+            <span className="text-[10px] text-[#B0A898] bg-orange-50 dark:bg-orange-950/20 px-1.5 py-0.5 rounded-full">TripAdvisor 기준</span>
           </div>
           <span className="text-[#8A7A6A]">·</span>
           <span className="text-sm font-semibold text-[#6B7C3E]">{restaurant.priceRange}</span>
@@ -183,6 +186,14 @@ export default async function RestaurantDetailPage({ params }: Props) {
 
           {/* 호텔로 돌아가기 */}
           <HotelNavigationButton variant="inline" />
+
+          {/* 찜하기 버튼 */}
+          <LikeButton type="restaurant" placeId={restaurant.id} />
+        </div>
+
+        {/* MWC 멤버 리뷰 */}
+        <div className="border-t border-[#E8DFD0] dark:border-[#3A3028] pt-5">
+          <CommentSection type="restaurant" placeId={restaurant.id} />
         </div>
       </div>
 

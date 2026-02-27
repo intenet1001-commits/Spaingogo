@@ -53,11 +53,16 @@ export default function AttractionCard({ attraction, compact = false }: Props) {
               <h3 className="font-semibold text-sm truncate text-[#1A1209] dark:text-[#F5F0E8]">{name}</h3>
             </div>
             <div className="flex items-center gap-2 text-xs text-[#6B5E4E] dark:text-[#B8A898]">
-              <span className="flex items-center gap-0.5">
-                <Star size={11} className="fill-[#FFC400] text-[#FFC400]" />
-                {rating.toFixed(1)}
-              </span>
-              <span>·</span>
+              {reviewCount > 0 && (
+                <>
+                  <span className="flex items-center gap-0.5">
+                    <Star size={11} className="fill-[#FFC400] text-[#FFC400]" />
+                    {rating.toFixed(1)}
+                    <span className="text-[8px] text-[#B0A898] ml-0.5">TA</span>
+                  </span>
+                  <span>·</span>
+                </>
+              )}
               <span className={cn("font-medium", isFree ? "text-[#6B7C3E]" : "text-[#8A7A6A]")}>
                 {isFree ? "무료" : entryFee.split("~")[0]}
               </span>
@@ -136,10 +141,15 @@ export default function AttractionCard({ attraction, compact = false }: Props) {
           {/* 별점 & 거리 */}
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center gap-1.5">
-              <Star size={14} className="fill-[#FFC400] text-[#FFC400]" />
-              <span className="font-bold text-[#1A1209] dark:text-[#F5F0E8]">{rating.toFixed(1)}</span>
-              <span className="text-xs text-[#8A7A6A]">({reviewCount.toLocaleString()})</span>
-              <span className="text-[#D0C4B8] mx-1">·</span>
+              {reviewCount > 0 && (
+                <>
+                  <Star size={14} className="fill-[#FFC400] text-[#FFC400]" />
+                  <span className="font-bold text-[#1A1209] dark:text-[#F5F0E8]">{rating.toFixed(1)}</span>
+                  <span className="text-xs text-[#8A7A6A]">({reviewCount.toLocaleString()})</span>
+                  <span className="text-[8px] text-[#B0A898] bg-orange-50 dark:bg-orange-950/20 px-1 py-0.5 rounded">TA기준</span>
+                  <span className="text-[#D0C4B8] mx-1">·</span>
+                </>
+              )}
               <Timer size={12} className="text-[#8A7A6A]" />
               <span className="text-xs text-[#8A7A6A]">{duration}분</span>
             </div>

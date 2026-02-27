@@ -1,135 +1,94 @@
 {
-  "timestamp": "2026-02-24T16:55:43.474Z",
-  "testSuite": "Visual & Accessibility",
-  "viewports": [
+  "tested_at": "2026-02-25T01:58:00.534Z",
+  "base_url": "http://localhost:9020",
+  "viewports_tested": [
     {
-      "viewport": "mobile",
-      "size": "390x844",
-      "screenshots": [
-        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-home.png",
-        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-restaurants.png",
-        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-attractions.png",
-        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-emergency.png",
-        "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-nearby.png"
-      ],
-      "layoutIssues": [
-        {
-          "page": "/",
-          "issues": []
-        },
-        {
-          "page": "/restaurants",
-          "issues": [
-            "터치 타겟 작은 버튼: 3개 (<32px)"
-          ]
-        },
-        {
-          "page": "/attractions",
-          "issues": [
-            "터치 타겟 작은 버튼: 11개 (<32px)"
-          ]
-        },
-        {
-          "page": "/emergency",
-          "issues": []
-        },
-        {
-          "page": "/nearby",
-          "issues": [
-            "터치 타겟 작은 버튼: 4개 (<32px)"
-          ]
-        }
-      ]
+      "name": "mobile-sm",
+      "width": 375,
+      "height": 667,
+      "label": "iPhone SE"
     },
     {
+      "name": "mobile-lg",
+      "width": 390,
+      "height": 844,
+      "label": "iPhone 12 Pro"
+    },
+    {
+      "name": "tablet",
+      "width": 768,
+      "height": 1024,
+      "label": "iPad"
+    },
+    {
+      "name": "desktop",
+      "width": 1280,
+      "height": 800,
+      "label": "Desktop"
+    }
+  ],
+  "accessibility_issues": [],
+  "responsive_issues": [
+    {
+      "type": "element-overflow",
+      "route": "/restaurants",
+      "viewport": "mobile-sm",
+      "detail": "오버플로우: DIV.flex, BUTTON.flex-shrink-0, SPAN"
+    },
+    {
+      "type": "element-overflow",
+      "route": "/attractions",
+      "viewport": "mobile-sm",
+      "detail": "오버플로우: BUTTON.flex-shrink-0, SPAN"
+    },
+    {
+      "type": "element-overflow",
+      "route": "/restaurants",
+      "viewport": "mobile-lg",
+      "detail": "오버플로우: DIV.flex, BUTTON.flex-shrink-0, SPAN"
+    },
+    {
+      "type": "element-overflow",
+      "route": "/attractions",
+      "viewport": "mobile-lg",
+      "detail": "오버플로우: BUTTON.flex-shrink-0, SPAN"
+    },
+    {
+      "type": "element-overflow",
+      "route": "/restaurants",
       "viewport": "tablet",
-      "size": "768x1024",
-      "screenshots": [],
-      "layoutIssues": [
-        {
-          "page": "/",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screens"
-          ]
-        },
-        {
-          "page": "/restaurants",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        },
-        {
-          "page": "/attractions",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        },
-        {
-          "page": "/emergency",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        },
-        {
-          "page": "/nearby",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        }
-      ]
+      "detail": "오버플로우: BUTTON.flex-shrink-0, SPAN"
     },
     {
-      "viewport": "desktop",
-      "size": "1280x800",
-      "screenshots": [],
-      "layoutIssues": [
-        {
-          "page": "/",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - taking page screens"
-          ]
-        },
-        {
-          "page": "/restaurants",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        },
-        {
-          "page": "/attractions",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        },
-        {
-          "page": "/emergency",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        },
-        {
-          "page": "/nearby",
-          "issues": [
-            "에러: page.screenshot: Timeout 30000ms exceeded."
-          ]
-        }
-      ]
+      "type": "element-overflow",
+      "route": "/attractions",
+      "viewport": "tablet",
+      "detail": "오버플로우: BUTTON.flex-shrink-0, SPAN"
     }
   ],
-  "accessibilityIssues": [
-    {
-      "type": "info",
-      "desc": "헤딩 요소 수: h1=1, h2=3, h3=10"
-    },
-    {
-      "type": "info",
-      "desc": "html lang: ko"
-    }
+  "visual_issues": [],
+  "screenshots": [
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-lg_.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-lg_restaurants.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-lg_attractions.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-lg_nearby.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/mobile-lg_emergency.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/desktop_.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/desktop_restaurants.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/desktop_attractions.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/desktop_nearby.png",
+    "/Users/gwanli/Documents/GitHub/myproduct_v4/Spaingogo/tests/screenshots/desktop_emergency.png"
   ],
-  "issues": [],
   "summary": {
-    "totalScreenshots": 5,
-    "totalLayoutIssues": 13,
-    "a11yIssueCount": 0
+    "viewports_tested": 4,
+    "pages_tested": 5,
+    "total_accessibility_issues": 0,
+    "total_responsive_issues": 6,
+    "total_visual_issues": 0,
+    "screenshots_taken": 10,
+    "accessibility_issue_types": [],
+    "responsive_issue_types": [
+      "element-overflow"
+    ]
   }
 }

@@ -8,6 +8,8 @@ import { HOTEL_COORDINATES } from "@/domain/value-objects/HotelCoordinate";
 import { useUserLocation } from "@/hooks/useUserLocation";
 import SituationRecommender from "./SituationRecommender";
 import SituationRecommenderPlaces from "./SituationRecommenderPlaces";
+import RecentReviews from "./RecentReviews";
+import DualClock from "./DualClock";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -101,6 +103,7 @@ export default function HomeTabView({
           nearbyAttractions={nearbyAttractions}
         />
       )}
+
     </>
   );
 }
@@ -115,6 +118,9 @@ function EatHero() {
         <div className="absolute bottom-2 left-2 text-6xl select-none">🥘</div>
       </div>
       <div className="relative">
+        <div className="mb-3">
+          <DualClock />
+        </div>
         <div className="flex items-center gap-2 mb-1">
           <MapPin size={14} className="text-[#FFC400]" />
           <span className="text-xs text-white/80 font-medium">
@@ -123,10 +129,10 @@ function EatHero() {
         </div>
         <h1 className="font-serif text-3xl font-bold leading-tight mb-2">
           ¡Buen provecho!<br />
-          <span className="text-[#FFC400]">바르셀로나</span> 맛집 가이드
+          <span className="text-xl"><span className="text-[#FFC400]">바르셀로나</span> 대충 먹어요</span>
         </h1>
         <p className="text-sm text-white/75 leading-relaxed">
-          호텔에서 걸어갈 수 있는 최고의 맛집을 찾아보세요
+          어쩌다 와보니 맛집
         </p>
         <Link
           href="/restaurants"
@@ -150,6 +156,9 @@ function GoHero() {
         <div className="absolute bottom-2 left-2 text-6xl select-none">🏖️</div>
       </div>
       <div className="relative">
+        <div className="mb-3">
+          <DualClock />
+        </div>
         <div className="flex items-center gap-2 mb-1">
           <MapPin size={14} className="text-[#FFC400]" />
           <span className="text-xs text-white/80 font-medium">
@@ -158,10 +167,10 @@ function GoHero() {
         </div>
         <h1 className="font-serif text-3xl font-bold leading-tight mb-2">
           ¡Barcelona!<br />
-          <span className="text-[#FFC400]">바르셀로나</span> 관광 가이드
+          <span className="text-xl"><span className="text-[#FFC400]">바르셀로나</span> 잠깐 바람쐬러나가요</span>
         </h1>
         <p className="text-sm text-white/75 leading-relaxed">
-          가우디부터 해변까지, 놓치면 후회할 명소들
+          어쩌다 들어가보니 명소
         </p>
         <Link
           href="/attractions"
@@ -207,6 +216,9 @@ function EatContent({
         </div>
       </section>
 
+      {/* MWC 멤버 리뷰 */}
+      <RecentReviews />
+
       {/* 호텔 근처 맛집 */}
       <section className="px-4 pt-6">
         <div className="flex items-center justify-between mb-3">
@@ -232,6 +244,7 @@ function EatContent({
                   <div className="flex items-center gap-1.5 mt-0.5">
                     <Star size={11} className="fill-[#FFC400] text-[#FFC400]" />
                     <span className="text-xs text-[#6B5E4E] dark:text-[#B8A898]">{r.rating.toFixed(1)}</span>
+                    <span className="text-[8px] text-[#B0A898]">TA</span>
                     <span className="text-xs text-[#8A7A6A]">· {r.district}</span>
                   </div>
                 </div>
@@ -274,6 +287,7 @@ function EatContent({
                       <span className="flex items-center gap-0.5 text-xs font-semibold text-[#1A1209] dark:text-[#F5F0E8]">
                         <Star size={11} className="fill-[#FFC400] text-[#FFC400]" />
                         {r.rating.toFixed(1)}
+                        <span className="text-[8px] text-[#B0A898] font-normal ml-0.5">TA</span>
                       </span>
                       <span className="flex items-center gap-0.5 text-xs text-[#C60B1E] font-medium">
                         <Hotel size={10} />
@@ -326,6 +340,9 @@ function GoContent({
         </div>
       </section>
 
+      {/* MWC 멤버 리뷰 */}
+      <RecentReviews />
+
       {/* 호텔 근처 명소 */}
       <section className="px-4 pt-6">
         <div className="flex items-center justify-between mb-3">
@@ -351,6 +368,7 @@ function GoContent({
                   <div className="flex items-center gap-1.5 mt-0.5">
                     <Star size={11} className="fill-[#FFC400] text-[#FFC400]" />
                     <span className="text-xs text-[#6B5E4E] dark:text-[#B8A898]">{a.rating.toFixed(1)}</span>
+                    <span className="text-[8px] text-[#B0A898]">TA</span>
                     <span className="text-xs text-[#8A7A6A]">· {a.district}</span>
                     <span className={cn(
                       "text-xs font-medium",
@@ -377,7 +395,7 @@ function GoContent({
           </Link>
         </div>
         <div className="space-y-4">
-          {topAttractions.map((a) => (
+          {topAttractions.filter((a) => a.rating < 5).map((a) => (
             <Link key={a.id} href={`/attractions/${a.id}`}>
               <article className="card-warm group">
                 <div className="flex gap-3 p-3">
@@ -396,6 +414,7 @@ function GoContent({
                       <span className="flex items-center gap-0.5 text-xs font-semibold text-[#1A1209] dark:text-[#F5F0E8]">
                         <Star size={11} className="fill-[#FFC400] text-[#FFC400]" />
                         {a.rating.toFixed(1)}
+                        <span className="text-[8px] text-[#B0A898] ml-0.5">TA</span>
                       </span>
                       <span className="flex items-center gap-0.5 text-xs text-[#1B4F8A] font-medium">
                         <Hotel size={10} />
@@ -411,6 +430,29 @@ function GoContent({
               </article>
             </Link>
           ))}
+
+          {/* 광고 영역 (마지막 슬롯) */}
+          <article className="card-warm opacity-50 cursor-default select-none">
+            <div className="flex gap-3 p-3">
+              <div className="w-20 h-20 rounded-xl bg-[#F5F0E8] dark:bg-[#2A2018] flex items-center justify-center text-3xl flex-shrink-0">
+                📢
+              </div>
+              <div className="flex-1 min-w-0 py-0.5">
+                <div className="flex items-center gap-1.5 mb-1">
+                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-[#FFC400] text-[#1A1209]">AD</span>
+                  <h3 className="font-semibold text-sm text-[#8A7A6A] leading-tight">
+                    이 자리는 광고 영역입니다
+                  </h3>
+                </div>
+                <p className="text-xs text-[#B0A898] line-clamp-2 mb-2 leading-relaxed">
+                  협찬 문의 환영 🙏 (현재 공석... 부끄럽네요)
+                </p>
+                <div className="flex items-center gap-2">
+                  <span className="text-xs text-[#B0A898]">☆ ?.? · 광고비 협의 가능합니다</span>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 

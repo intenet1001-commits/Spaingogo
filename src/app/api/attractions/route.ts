@@ -1,4 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
+import fs from "fs";
+import path from "path";
 import { distanceFromHotel, formatDistance, walkingMinutes } from "@/domain/services/DistanceCalculatorService";
 import attractionsData from "@/infrastructure/data/attractions.json";
 
@@ -19,12 +21,30 @@ export interface Attraction {
   tags: string[];
   tips: string;
   googleMapsUrl: string;
+  contactUrl?: string;
   imageUrl: string;
   district: string;
   michelin: boolean;
+  hidden?: boolean;
   distanceMeters?: number;
   distanceText?: string;
   walkingMinutes?: number;
+}
+
+const COMMENTS_FILE = path.join(process.cwd(), "comments.json");
+
+function getCommentCountMap(type: string): Record<string, number> {
+  try {
+    if (!fs.existsSync(COMMENTS_FILE)) return {};
+    const data = JSON.parse(fs.readFileSync(COMMENTS_FILE, "utf-8"));
+    const counts: Record<string, number> = {};
+    for (const c of data.comments || []) {
+      if (c.type === type) counts[c.placeId] = (counts[c.placeId] ?? 0) + 1;
+    }
+    return counts;
+  } catch {
+    return {};
+  }
 }
 
 export async function GET(request: NextRequest) {
@@ -59,11 +79,9 @@ export async function GET(request: NextRequest) {
           a.tags.some((t) => ["산책", "가로수길", "공원", "골목"].includes(t))
         );
         break;
-      case "kids":
+      case "church":
         results = results.filter((a) =>
-          a.tags.some((t) => ["아이와함께", "놀이공원", "보트", "공원"].includes(t)) ||
-          a.category === "activity" ||
-          a.category === "park"
+          a.tags.some((t) => ["한인교회", "교회", "예배"].includes(t))
         );
         break;
       case "free":
@@ -131,8 +149,16 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // hidden 항목 제거 (church 상황일 때는 포함)
+  if (situation !== "church") {
+    results = results.filter((a) => !a.hidden);
+  }
+
   if (sort === "distance") {
     results.sort((a, b) => (a.distanceMeters ?? 0) - (b.distanceMeters ?? 0));
+  } else if (sort === "memberReviews") {
+    const countMap = getCommentCountMap("attraction");
+    results.sort((a, b) => (countMap[b.id] ?? 0) - (countMap[a.id] ?? 0));
   } else {
     results.sort((a, b) => b.rating - a.rating);
   }

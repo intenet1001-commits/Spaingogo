@@ -24,7 +24,7 @@ type CategoryId = (typeof CATEGORIES)[number]["id"];
 const SITUATION_LABELS: Record<string, { emoji: string; label: string }> = {
   photo:    { emoji: "📸", label: "사진 찍기 좋은" },
   walk:     { emoji: "🚶", label: "걷기 좋은" },
-  kids:     { emoji: "👨‍👩‍👧", label: "아이와 함께" },
+  church:   { emoji: "⛪", label: "한인교회" },
   free:     { emoji: "🆓", label: "무료 입장" },
   night:    { emoji: "🌃", label: "야경 보러" },
   history:  { emoji: "📚", label: "역사 탐방" },
@@ -110,6 +110,7 @@ function AttractionsListContent() {
           {[
             { id: "rating",   label: "평점순" },
             { id: "distance", label: "거리순" },
+            { id: "memberReviews", label: "MWC멤버리뷰순" },
           ].map(({ id, label }) => (
             <button
               key={id}

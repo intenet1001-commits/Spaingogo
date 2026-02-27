@@ -1,109 +1,234 @@
 {
-  "timestamp": "2026-02-24T16:50:54.455Z",
-  "testSuite": "API & Network Analysis",
-  "requests": [],
-  "failedRequests": [
+  "tested_at": "2026-02-25T01:58:01.301Z",
+  "base_url": "http://localhost:9020",
+  "pages": [
     {
-      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1583779457094-ab6f77f7bf57%3Fw%3D800%26q%3D80&w=640&q=75",
-      "status": 404,
-      "statusText": "Not Found"
+      "route": "/",
+      "total_requests": 16,
+      "api_requests": 0,
+      "failed_requests": 0,
+      "console_errors": 0,
+      "api_endpoints": [],
+      "failed_details": [],
+      "console_error_messages": []
     },
     {
-      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1598977591216-1875c7dae545%3Fw%3D800%26q%3D80&w=640&q=75",
-      "status": 404,
-      "statusText": "Not Found"
+      "route": "/restaurants",
+      "total_requests": 23,
+      "api_requests": 2,
+      "failed_requests": 1,
+      "console_errors": 1,
+      "api_endpoints": [
+        {
+          "url": "http://localhost:9020/api/restaurants?sort=rating",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:9020/_next/static/webpack/88a112bf2f7b7162.webpack.hot-update.json",
+          "method": "GET"
+        }
+      ],
+      "failed_details": [
+        {
+          "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1515467837915-15c4777cd6e0%3Fw%3D800%26q%3D80&w=640&q=75",
+          "status": 404,
+          "statusText": "Not Found",
+          "resourceType": "response-error"
+        }
+      ],
+      "console_error_messages": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
     },
     {
-      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1561436260-e1b6d56ec5a6%3Fw%3D800%26q%3D80&w=640&q=75",
-      "status": 404,
-      "statusText": "Not Found"
+      "route": "/attractions",
+      "total_requests": 22,
+      "api_requests": 2,
+      "failed_requests": 3,
+      "console_errors": 3,
+      "api_endpoints": [
+        {
+          "url": "http://localhost:9020/api/attractions?sort=rating",
+          "method": "GET"
+        },
+        {
+          "url": "http://localhost:9020/_next/static/webpack/5a4594bd69091aa1.webpack.hot-update.json",
+          "method": "GET"
+        }
+      ],
+      "failed_details": [
+        {
+          "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1577083552431-6e5fd01988ec%3Fw%3D800%26q%3D80&w=640&q=75",
+          "status": 404,
+          "statusText": "Not Found",
+          "resourceType": "response-error"
+        },
+        {
+          "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1562883675-8a8b4e0e57c9%3Fw%3D800%26q%3D80&w=640&q=75",
+          "status": 404,
+          "statusText": "Not Found",
+          "resourceType": "response-error"
+        },
+        {
+          "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1551854838-212c9e1b3c38%3Fw%3D800%26q%3D80&w=640&q=75",
+          "status": 404,
+          "statusText": "Not Found",
+          "resourceType": "response-error"
+        }
+      ],
+      "console_error_messages": [
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ]
     },
     {
-      "url": "http://localhost:9020/api/admin/auth",
-      "status": 405,
-      "statusText": "Method Not Allowed"
+      "route": "/nearby",
+      "total_requests": 14,
+      "api_requests": 1,
+      "failed_requests": 0,
+      "console_errors": 0,
+      "api_endpoints": [
+        {
+          "url": "http://localhost:9020/_next/static/webpack/c5b376c38dde223c.webpack.hot-update.json",
+          "method": "GET"
+        }
+      ],
+      "failed_details": [],
+      "console_error_messages": []
+    },
+    {
+      "route": "/bookmarks",
+      "total_requests": 10,
+      "api_requests": 0,
+      "failed_requests": 0,
+      "console_errors": 0,
+      "api_endpoints": [],
+      "failed_details": [],
+      "console_error_messages": []
+    },
+    {
+      "route": "/emergency",
+      "total_requests": 10,
+      "api_requests": 0,
+      "failed_requests": 0,
+      "console_errors": 0,
+      "api_endpoints": [],
+      "failed_details": [],
+      "console_error_messages": []
+    },
+    {
+      "route": "/admin",
+      "total_requests": 10,
+      "api_requests": 0,
+      "failed_requests": 0,
+      "console_errors": 0,
+      "api_endpoints": [],
+      "failed_details": [],
+      "console_error_messages": []
     }
   ],
-  "consoleErrors": [
+  "failed_requests": [
     {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1515467837915-15c4777cd6e0%3Fw%3D800%26q%3D80&w=640&q=75",
+      "status": 404,
+      "statusText": "Not Found",
+      "resourceType": "response-error"
     },
     {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1577083552431-6e5fd01988ec%3Fw%3D800%26q%3D80&w=640&q=75",
+      "status": 404,
+      "statusText": "Not Found",
+      "resourceType": "response-error"
     },
     {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1562883675-8a8b4e0e57c9%3Fw%3D800%26q%3D80&w=640&q=75",
+      "status": 404,
+      "statusText": "Not Found",
+      "resourceType": "response-error"
     },
     {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
-    },
-    {
-      "type": "error",
-      "text": "Failed to load resource: the server responded with a status of 405 (Method Not Allowed)"
+      "url": "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1551854838-212c9e1b3c38%3Fw%3D800%26q%3D80&w=640&q=75",
+      "status": 404,
+      "statusText": "Not Found",
+      "resourceType": "response-error"
     }
   ],
-  "apiTests": [
+  "console_errors": [
+    {
+      "route": "/restaurants",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "route": "/attractions",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "route": "/attractions",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    },
+    {
+      "route": "/attractions",
+      "message": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "api_endpoints": [
+    {
+      "url": "http://localhost:9020/api/restaurants?sort=rating",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:9020/_next/static/webpack/88a112bf2f7b7162.webpack.hot-update.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:9020/api/attractions?sort=rating",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:9020/_next/static/webpack/5a4594bd69091aa1.webpack.hot-update.json",
+      "method": "GET"
+    },
+    {
+      "url": "http://localhost:9020/_next/static/webpack/c5b376c38dde223c.webpack.hot-update.json",
+      "method": "GET"
+    }
+  ],
+  "api_direct_tests": [
     {
       "endpoint": "/api/restaurants",
       "status": 200,
-      "ok": true,
-      "dataCount": 20,
-      "sampleItem": "id, name, category, categoryEmoji, rating, reviewCount, address, lat, lng, description, priceRange, openHours, tags, michelin, imageUrl, district, distanceMeters, distanceText, walkingMinutes"
+      "contentType": "application/json",
+      "length": 10578,
+      "accessible": true
     },
     {
       "endpoint": "/api/attractions",
       "status": 200,
-      "ok": true,
-      "dataCount": 20,
-      "sampleItem": "id, name, category, categoryEmoji, rating, reviewCount, address, lat, lng, description, openHours, entryFee, duration, tags, tips, googleMapsUrl, imageUrl, district, michelin, distanceMeters, distanceText, walkingMinutes"
+      "contentType": "application/json",
+      "length": 15223,
+      "accessible": true
     },
     {
-      "endpoint": "/api/admin/auth",
-      "status": 405,
-      "ok": false,
-      "preview": ""
+      "endpoint": "/api/admin/verify",
+      "status": 404,
+      "contentType": "text/html; charset=utf-8",
+      "length": 14735,
+      "accessible": false
     }
   ],
-  "issues": [],
-  "googleMapsLinks": [
-    {
-      "href": "https://www.google.com/maps/search/?api=1&query=41.3838,2.1815",
-      "text": "지도에서 보기 →"
-    },
-    {
-      "href": "https://www.google.com/maps/search/Bar%20del%20Pla%20Barcelona",
-      "text": "🗺️Google 예약"
-    },
-    {
-      "href": "https://www.google.com/maps/search/?api=1&query=41.3838,2.1815",
-      "text": "레스토랑으로 길찾기"
-    }
-  ],
-  "requestStats": {
-    "total": 96,
-    "byType": {
-      "document": 7,
-      "image": 19,
-      "stylesheet": 14,
-      "script": 36,
-      "font": 14,
-      "fetch": 6
-    },
-    "externalDomains": [
-      "images.unsplash.com",
-      "fonts.googleapis.com",
-      "fonts.gstatic.com"
-    ]
-  },
   "summary": {
-    "totalRequests": 96,
-    "failedRequests": 4,
-    "consoleErrors": 5,
-    "apiEndpoints": 3,
-    "allApisOk": false
+    "total_pages_analyzed": 7,
+    "total_requests": 105,
+    "total_failed_requests": 4,
+    "total_console_errors": 4,
+    "pages_with_console_errors": 2,
+    "unique_api_endpoints": 5,
+    "failed_request_urls": [
+      "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1515467837915-15c4777cd6e0%3Fw%3D800%26q%3D80&w=640&q=75",
+      "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1577083552431-6e5fd01988ec%3Fw%3D800%26q%3D80&w=640&q=75",
+      "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1562883675-8a8b4e0e57c9%3Fw%3D800%26q%3D80&w=640&q=75",
+      "http://localhost:9020/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1551854838-212c9e1b3c38%3Fw%3D800%26q%3D80&w=640&q=75"
+    ]
   }
 }

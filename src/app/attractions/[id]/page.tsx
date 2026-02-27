@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Star, MapPin, Clock, ChevronLeft, Navigation, Timer } from "lucide-react";
 import HotelNavigationButton from "@/components/HotelNavigationButton";
 import BottomNav from "@/components/BottomNav";
+import LikeButton from "@/components/LikeButton";
+import CommentSection from "@/components/CommentSection";
 import attractionsData from "@/infrastructure/data/attractions.json";
 import { distanceFromHotel, formatDistance, walkingMinutes } from "@/domain/services/DistanceCalculatorService";
 
@@ -75,12 +77,17 @@ export default async function AttractionDetailPage({ params }: Props) {
       <div className="px-5 pt-5 space-y-5">
         {/* 핵심 정보 */}
         <div className="flex flex-wrap items-center gap-3">
-          <div className="flex items-center gap-1.5">
-            <Star size={16} className="fill-[#FFC400] text-[#FFC400]" />
-            <span className="font-bold text-[#1A1209] dark:text-[#F5F0E8]">{attraction.rating.toFixed(1)}</span>
-            <span className="text-sm text-[#8A7A6A]">({attraction.reviewCount.toLocaleString()})</span>
-          </div>
-          <span className="text-[#8A7A6A]">·</span>
+          {attraction.reviewCount > 0 && (
+            <>
+              <div className="flex items-center gap-1.5">
+                <Star size={16} className="fill-[#FFC400] text-[#FFC400]" />
+                <span className="font-bold text-[#1A1209] dark:text-[#F5F0E8]">{attraction.rating.toFixed(1)}</span>
+                <span className="text-sm text-[#8A7A6A]">({attraction.reviewCount.toLocaleString()})</span>
+                <span className="text-[10px] text-[#B0A898] bg-orange-50 dark:bg-orange-950/20 px-1.5 py-0.5 rounded-full">TripAdvisor 기준</span>
+              </div>
+              <span className="text-[#8A7A6A]">·</span>
+            </>
+          )}
           <div className="flex items-center gap-1 text-sm font-semibold text-[#8A7A6A]">
             <Timer size={14} />
             약 {attraction.duration}분
@@ -156,8 +163,29 @@ export default async function AttractionDetailPage({ params }: Props) {
             Google Maps로 길찾기
           </a>
 
+          {/* 교회 연락처 링크 */}
+          {(attraction as unknown as { contactUrl?: string }).contactUrl && (
+            <a
+              href={(attraction as unknown as { contactUrl?: string }).contactUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 w-full py-3.5 rounded-2xl font-semibold text-sm bg-gradient-to-br from-[#6B7C3E] to-[#556030] text-white active:scale-95 transition-all shadow-sm"
+            >
+              <span>✉️</span>
+              교회 연락처 페이지
+            </a>
+          )}
+
           {/* 호텔로 돌아가기 */}
           <HotelNavigationButton variant="inline" />
+
+          {/* 찜하기 버튼 */}
+          <LikeButton type="attraction" placeId={attraction.id} />
+        </div>
+
+        {/* MWC 멤버 리뷰 */}
+        <div className="border-t border-[#E8DFD0] dark:border-[#3A3028] pt-5">
+          <CommentSection type="attraction" placeId={attraction.id} />
         </div>
       </div>
 
