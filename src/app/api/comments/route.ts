@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import fs from "fs";
-import path from "path";
+import { kv } from "@vercel/kv";
 import restaurantsData from "@/infrastructure/data/restaurants.json";
 import attractionsData from "@/infrastructure/data/attractions.json";
 
@@ -12,7 +11,7 @@ for (const a of attractionsData) {
   placeNameMap[`attraction:${a.id}`] = { name: a.name, emoji: a.categoryEmoji };
 }
 
-const COMMENTS_FILE = path.join(process.cwd(), "comments.json");
+const KV_KEY = "spaingogo:comments";
 
 interface Comment {
   id: string;
@@ -24,20 +23,17 @@ interface Comment {
   createdAt: string;
 }
 
-function readComments(): Comment[] {
+async function readComments(): Promise<Comment[]> {
   try {
-    if (!fs.existsSync(COMMENTS_FILE)) {
-      fs.writeFileSync(COMMENTS_FILE, JSON.stringify({ comments: [] }), "utf-8");
-    }
-    const data = JSON.parse(fs.readFileSync(COMMENTS_FILE, "utf-8"));
-    return data.comments || [];
+    const data = await kv.get<Comment[]>(KV_KEY);
+    return data ?? [];
   } catch {
     return [];
   }
 }
 
-function writeComments(comments: Comment[]): void {
-  fs.writeFileSync(COMMENTS_FILE, JSON.stringify({ comments }, null, 2), "utf-8");
+async function writeComments(comments: Comment[]): Promise<void> {
+  await kv.set(KV_KEY, comments);
 }
 
 export async function GET(request: NextRequest) {
@@ -47,7 +43,7 @@ export async function GET(request: NextRequest) {
   const limit = parseInt(searchParams.get("limit") || "0", 10);
   const enrich = searchParams.get("enrich") === "true";
 
-  const comments = readComments();
+  const comments = await readComments();
   let filtered = comments
     .filter((c) => (!type || c.type === type) && (!placeId || c.placeId === placeId))
     .reverse();
@@ -79,7 +75,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "댓글은 300자 이하로 입력해주세요." }, { status: 400 });
   }
 
-  const comments = readComments();
+  const comments = await readComments();
   const newComment: Comment = {
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
     type,
@@ -91,7 +87,7 @@ export async function POST(request: NextRequest) {
   };
 
   comments.push(newComment);
-  writeComments(comments);
+  await writeComments(comments);
 
   return NextResponse.json({ comment: newComment }, { status: 201 });
 }
