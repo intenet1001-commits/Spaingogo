@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { kv } from "@vercel/kv";
+import { createClient } from "@supabase/supabase-js";
 import restaurantsData from "@/infrastructure/data/restaurants.json";
 import attractionsData from "@/infrastructure/data/attractions.json";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_ANON_KEY!
+);
 
 const placeNameMap: Record<string, { name: string; emoji: string }> = {};
 for (const r of restaurantsData) {
@@ -11,31 +16,6 @@ for (const a of attractionsData) {
   placeNameMap[`attraction:${a.id}`] = { name: a.name, emoji: a.categoryEmoji };
 }
 
-const KV_KEY = "spaingogo:comments";
-
-interface Comment {
-  id: string;
-  type: "restaurant" | "attraction";
-  placeId: string;
-  nickname: string;
-  content: string;
-  rating?: number;
-  createdAt: string;
-}
-
-async function readComments(): Promise<Comment[]> {
-  try {
-    const data = await kv.get<Comment[]>(KV_KEY);
-    return data ?? [];
-  } catch {
-    return [];
-  }
-}
-
-async function writeComments(comments: Comment[]): Promise<void> {
-  await kv.set(KV_KEY, comments);
-}
-
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const type = searchParams.get("type");
@@ -43,22 +23,37 @@ export async function GET(request: NextRequest) {
   const limit = parseInt(searchParams.get("limit") || "0", 10);
   const enrich = searchParams.get("enrich") === "true";
 
-  const comments = await readComments();
-  let filtered = comments
-    .filter((c) => (!type || c.type === type) && (!placeId || c.placeId === placeId))
-    .reverse();
+  let query = supabase
+    .from("comments")
+    .select("*")
+    .order("created_at", { ascending: false });
 
-  if (limit > 0) filtered = filtered.slice(0, limit);
+  if (type) query = query.eq("type", type);
+  if (placeId) query = query.eq("place_id", placeId);
+  if (limit > 0) query = query.limit(limit);
+
+  const { data, error } = await query;
+  if (error) return NextResponse.json({ error: "서버 오류" }, { status: 500 });
+
+  const comments = (data ?? []).map((row) => ({
+    id: row.id,
+    type: row.type,
+    placeId: row.place_id,
+    nickname: row.nickname,
+    content: row.content,
+    rating: row.rating,
+    createdAt: row.created_at,
+  }));
 
   if (enrich) {
-    const enriched = filtered.map((c) => {
+    const enriched = comments.map((c) => {
       const info = placeNameMap[`${c.type}:${c.placeId}`];
       return { ...c, placeName: info?.name ?? c.placeId, placeEmoji: info?.emoji ?? "📍" };
     });
     return NextResponse.json({ comments: enriched });
   }
 
-  return NextResponse.json({ comments: filtered });
+  return NextResponse.json({ comments });
 }
 
 export async function POST(request: NextRequest) {
@@ -75,19 +70,28 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "댓글은 300자 이하로 입력해주세요." }, { status: 400 });
   }
 
-  const comments = await readComments();
-  const newComment: Comment = {
+  const newComment = {
     id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
     type,
-    placeId,
+    place_id: placeId,
     nickname: nickname.trim(),
     content: content.trim(),
-    rating: rating ? Number(rating) : undefined,
-    createdAt: new Date().toISOString(),
+    rating: rating ? Number(rating) : null,
+    created_at: new Date().toISOString(),
   };
 
-  comments.push(newComment);
-  await writeComments(comments);
+  const { data, error } = await supabase.from("comments").insert(newComment).select().single();
+  if (error) return NextResponse.json({ error: "서버 오류" }, { status: 500 });
 
-  return NextResponse.json({ comment: newComment }, { status: 201 });
+  return NextResponse.json({
+    comment: {
+      id: data.id,
+      type: data.type,
+      placeId: data.place_id,
+      nickname: data.nickname,
+      content: data.content,
+      rating: data.rating,
+      createdAt: data.created_at,
+    },
+  }, { status: 201 });
 }
