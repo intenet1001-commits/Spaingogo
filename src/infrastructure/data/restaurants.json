@@ -15,14 +15,15 @@
     "tags": ["타파스", "카탈루냐", "와인", "현지인추천"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-    "district": "Ciutat Vella"
+    "district": "Ciutat Vella",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3838,2.1815"
   },
   {
     "id": "2",
     "name": "Restaurante 7 Portes",
     "category": "paella",
     "categoryEmoji": "🍚",
-    "rating": 4.6,
+    "rating": 4.2,
     "reviewCount": 5120,
     "address": "Passeig d'Isabel II, 14, Barceloneta, Barcelona",
     "lat": 41.3803,
@@ -33,43 +34,46 @@
     "tags": ["파에야", "해산물", "전통", "명소"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=800&q=80",
-    "district": "Barceloneta"
+    "district": "Barceloneta",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3803,2.1848"
   },
   {
     "id": "3",
     "name": "La Cova Fumada",
     "category": "seafood",
     "categoryEmoji": "🦑",
-    "rating": 4.5,
+    "rating": 4.6,
     "reviewCount": 1930,
     "address": "Carrer del Baluard, 56, Barceloneta, Barcelona",
-    "lat": 41.3784,
-    "lng": 2.1893,
+    "lat": 41.3793,
+    "lng": 2.1870,
     "description": "봄바(Bomba) 감자 튀김의 원조. 예약 불가, 일찍 가야 맛볼 수 있는 숨은 보석.",
     "priceRange": "$$",
     "openHours": "09:00 - 15:00",
     "tags": ["해산물", "봄바", "현지인추천", "아침"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=800&q=80",
-    "district": "Barceloneta"
+    "district": "Barceloneta",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3793,2.1870"
   },
   {
     "id": "4",
-    "name": "Tickets",
+    "name": "Bar Cañete",
     "category": "tapas",
     "categoryEmoji": "🥘",
-    "rating": 4.8,
-    "reviewCount": 4210,
-    "address": "Avinguda del Paral·lel, 164, Sant Antoni, Barcelona",
-    "lat": 41.3753,
-    "lng": 2.1625,
-    "description": "알베르트 아드리아의 아방가르드 타파스 바. 예약 필수, 독창적인 분자 요리.",
-    "priceRange": "$$$$",
-    "openHours": "19:00 - 23:30",
-    "tags": ["타파스", "아방가르드", "미슐랭", "분자요리"],
-    "michelin": true,
-    "imageUrl": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
-    "district": "Sant Antoni"
+    "rating": 4.5,
+    "reviewCount": 3120,
+    "address": "Carrer de la Unió, 17, El Raval, Barcelona",
+    "lat": 41.3806,
+    "lng": 2.1712,
+    "description": "엘라발의 고급 타파스 바. 꼬막·조개·멸치 등 최고급 재료를 사용한 정통 스페인 바르 요리. 세련된 분위기에서 최상급 타파스를 즐길 수 있는 현지 인기 명소.",
+    "priceRange": "$$",
+    "openHours": "13:00 - 24:00 (월~토)",
+    "tags": ["타파스", "해산물", "고급바르", "엘라발"],
+    "michelin": false,
+    "imageUrl": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80",
+    "district": "El Raval",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3806,2.1712"
   },
   {
     "id": "5",
@@ -87,7 +91,8 @@
     "tags": ["타파스", "카바", "역사", "엘본"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
-    "district": "El Born"
+    "district": "El Born",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3841,2.1823"
   },
   {
     "id": "6",
@@ -105,7 +110,8 @@
     "tags": ["츄러스", "초콜릿", "역사", "아침"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
-    "district": "El Raval"
+    "district": "El Raval",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3829,2.1717"
   },
   {
     "id": "7",
@@ -123,7 +129,8 @@
     "tags": ["핀초스", "타파스", "에이샴플레", "인기", "브런치"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
-    "district": "Eixample"
+    "district": "Eixample",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3928,2.1609"
   },
   {
     "id": "8",
@@ -141,7 +148,8 @@
     "tags": ["파에야", "해산물", "전통", "바르셀로네타"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=800&q=80",
-    "district": "Barceloneta"
+    "district": "Barceloneta",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3788,2.1886"
   },
   {
     "id": "9",
@@ -151,15 +159,16 @@
     "rating": 4.8,
     "reviewCount": 3940,
     "address": "Carrer del Poeta Cabanyes, 25, Poble Sec, Barcelona",
-    "lat": 41.3748,
-    "lng": 2.1622,
+    "lat": 41.3740,
+    "lng": 2.1656,
     "description": "통조림 타파스의 명가. 세계 최고의 바 중 하나로 손꼽히는 전설적인 곳.",
     "priceRange": "$$",
     "openHours": "12:00 - 16:00, 19:00 - 22:30",
     "tags": ["타파스", "통조림", "베르무트", "현지인추천"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=800&q=80",
-    "district": "Poble Sec"
+    "district": "Poble Sec",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3740,2.1656"
   },
   {
     "id": "10",
@@ -177,7 +186,8 @@
     "tags": ["타파스", "퓨전", "모던", "힙"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1571407970349-bc81e7e96d47?w=800&q=80",
-    "district": "Eixample"
+    "district": "Eixample",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3912,2.1557"
   },
   {
     "id": "11",
@@ -187,33 +197,35 @@
     "rating": 4.6,
     "reviewCount": 2450,
     "address": "Passeig de Joan de Borbó, 58, Barceloneta, Barcelona",
-    "lat": 41.3802,
-    "lng": 2.1904,
+    "lat": 41.3768,
+    "lng": 2.1867,
     "description": "바르셀로네타 해변가 신선한 해산물 전문점. 파노라마 지중해 뷰 레스토랑.",
     "priceRange": "$$$",
     "openHours": "12:30 - 16:00, 20:00 - 23:00",
     "tags": ["해산물", "해변뷰", "지중해", "로맨틱"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=800&q=80",
-    "district": "Barceloneta"
+    "district": "Barceloneta",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3768,2.1867"
   },
   {
     "id": "12",
-    "name": "Jamonísimo",
-    "category": "jamon",
-    "categoryEmoji": "🥩",
-    "rating": 4.7,
-    "reviewCount": 1640,
-    "address": "Carrer de Provença, 85, Eixample, Barcelona",
-    "lat": 41.3875,
-    "lng": 2.1543,
-    "description": "스페인 최고급 이베리코 하몬 전문점. 숙성 하몬 시식 및 와인 페어링.",
-    "priceRange": "$$$",
-    "openHours": "10:00 - 22:00",
-    "tags": ["하몬", "이베리코", "와인", "고급"],
+    "name": "Cal Pep",
+    "category": "tapas",
+    "categoryEmoji": "🥘",
+    "rating": 4.3,
+    "reviewCount": 2850,
+    "address": "Plaça de les Olles, 8, El Born, Barcelona",
+    "lat": 41.3840,
+    "lng": 2.1833,
+    "description": "1988년 창업한 엘본의 전설적인 해산물 타파스 바. 카운터 좌석에서 주인이 직접 내주는 신선한 해산물 요리가 일품. 현지인들이 사랑하는 바르셀로나 최애 명소.",
+    "priceRange": "$$",
+    "openHours": "13:00 - 16:00, 19:00 - 23:00 (월~금), 13:00 - 16:00 (토)",
+    "tags": ["타파스", "해산물", "카운터바", "엘본", "현지인추천"],
     "michelin": false,
-    "imageUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
-    "district": "Eixample"
+    "imageUrl": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=800&q=80",
+    "district": "El Born",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3840,2.1833"
   },
   {
     "id": "13",
@@ -231,7 +243,8 @@
     "tags": ["타파스", "자연파와인", "산트안토니", "독립"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-    "district": "Sant Antoni"
+    "district": "Sant Antoni",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3793,2.1598"
   },
   {
     "id": "14",
@@ -249,7 +262,8 @@
     "tags": ["카탈루냐", "계절메뉴", "고딕지구", "현지인", "카페"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80",
-    "district": "Barri Gòtic"
+    "district": "Barri Gòtic",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3823,2.1771"
   },
   {
     "id": "15",
@@ -267,7 +281,8 @@
     "tags": ["핀초스", "베르무트", "브런치", "트렌디"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=800&q=80",
-    "district": "Sant Antoni"
+    "district": "Sant Antoni",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3779,2.1617"
   },
   {
     "id": "16",
@@ -285,7 +300,8 @@
     "tags": ["해산물", "고급", "에이샴플레", "로맨틱"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=800&q=80",
-    "district": "Eixample"
+    "district": "Eixample",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3937,2.1604"
   },
   {
     "id": "17",
@@ -303,7 +319,8 @@
     "tags": ["츄러스", "도넛", "아티즌", "디저트"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&q=80",
-    "district": "El Raval"
+    "district": "El Raval",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3820,2.1715"
   },
   {
     "id": "18",
@@ -321,7 +338,8 @@
     "tags": ["보카디요", "샌드위치", "하몬", "엘본", "매장식사"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&q=80",
-    "district": "El Born"
+    "district": "El Born",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3844,2.1820"
   },
   {
     "id": "19",
@@ -339,7 +357,8 @@
     "tags": ["파에야", "해변", "지중해뷰", "낭만"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=800&q=80",
-    "district": "Barceloneta"
+    "district": "Barceloneta",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3769,2.1917"
   },
   {
     "id": "20",
@@ -357,6 +376,7 @@
     "tags": ["타파스", "푸드홀", "에이샴플레", "다양"],
     "michelin": false,
     "imageUrl": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
-    "district": "Eixample"
+    "district": "Eixample",
+    "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=41.3919,2.1648"
   }
 ]
