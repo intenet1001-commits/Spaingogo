@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import EmergencyButton from "@/components/EmergencyButton";
 import PWAInstall from "@/components/PWAInstall";
+import DinnerAnnouncement from "@/components/DinnerAnnouncement";
 
 export const metadata: Metadata = {
   title: "Spaingogo 🇪🇸 | 바르셀로나 최대 음식 플랫폼",
@@ -48,6 +49,7 @@ export default function RootLayout({
           {children}
           <EmergencyButton />
           <PWAInstall />
+          <DinnerAnnouncement />
         </div>
       </body>
     </html>
